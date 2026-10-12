@@ -1,2 +1,20 @@
-# Dental-DT
-Dental Digital Twin research framework based on ISO 23247 and ontology.
+# Dental DT (DDT)
+
+牙科数字孪生研究项目，基于 ISO 23247 的架构映射与牙科 Ontology。
+
+## 当前阶段
+
+框架定义阶段。首先从实体视角梳理 OME、DCDCE、CE、UE、CSE，再定义牙科映射及本体。
+
+## 文档
+
+- [ISO 23247 框架与牙科映射](docs/iso23247-framework.md)
+- [项目进度](PROGRESS.md)
+- [更新记录](CHANGELOG.md)
+- [本体规划](ontology/README.md)
+
+## 范围与状态
+
+ISO 23247 原始范围为制造业。本项目的临床映射属于研究设计，不宣称已符合标准。患者口腔、治疗过程及修复体制造的具体范围尚待确定。
+
+当前没有已实现的本体、仿真或临床应用。标准原文逐条核查、领域专家审核与模型验证仍待完成。
