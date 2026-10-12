@@ -16,6 +16,9 @@ Updated: 2026-10-12.
 
 - [x] Draft acquisition requirements, region coverage, data contract and staged feasibility gates for H01-H03.
 
+- [x] Implement synthetic session-to-region-quality-to-twin pipeline and repeat-scan records.
+- [x] Pass five data-flow tests and two sequential CLI demo runs.
+
 ## In progress
 
 - [ ] Select initial clinical use case and observation requirements.

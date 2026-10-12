@@ -1,5 +1,11 @@
 # Change Log
 
+## 2026-10-12 — Executable synthetic pipeline
+
+- Implement region-based acceptance, immutable state snapshots, provenance and repeat-scan actions.
+- Add identity/time checks and idempotent session replay with conflict rejection.
+- Pass five tests and sequential CLI demo; quality is supplied, no disease detection implemented.
+
 ## 2026-10-12 — Acquisition specification
 
 - Map the first three capability candidates to acquisition data and reference tests.

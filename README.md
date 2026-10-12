@@ -10,6 +10,10 @@ Home detection and evidence-linked advice for selected mild oral-health problems
 
 Draft DT architecture and executable ontology v0.1, alongside preliminary sensor landscape research. Start with the entity view: OME, DCDCE, CE, UE and CSE, then refine dental mappings and ontology.
 
+## Runnable prototype
+
+A synthetic acquisition-to-twin data pipeline is available. See [prototype instructions](prototype/README.md). It does not perform clinical detection.
+
 ## Documentation
 
 - [Acquisition specification and feasibility plan](docs/acquisition-specification-v0.1.md)
