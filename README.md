@@ -11,6 +11,7 @@ Framework definition and preliminary sensor landscape research. Start with the e
 - [ISO 23247 framework](docs/iso23247-framework.md)
 - [Dental sensors and condition mapping](research/dental-sensors-landscape.md)
 - [Search log: 12 October 2026](research/search-log-2026-10-12.md)
+- [Portable/home scanner feasibility](research/portable-home-scanner-feasibility.md)
 - [Progress](PROGRESS.md)
 - [Change log](CHANGELOG.md)
 - [Ontology plan](ontology/README.md)

@@ -12,6 +12,8 @@ Updated: 2026-10-12.
 - [x] Conduct preliminary sensor search: 15 categories and 27 selected source records.
 - [x] Save sensor-to-condition mapping, evidence limits, search queries and access limitations.
 
+- [x] Record portable professional scanners, home photographic monitoring and self-scan design opportunities.
+
 ## In progress
 
 - [ ] Define dental objects and properties, starting with OME.

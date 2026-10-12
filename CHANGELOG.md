@@ -1,5 +1,10 @@
 # Change Log
 
+## 2026-10-12 — Portable/home scanner exploration
+
+- Add official product examples, eight follow-up queries, design opportunities and validation criteria.
+- Separate professional portability, home photographic monitoring and calibrated 3D self-scanning.
+
 ## 2026-10-12 — Sensor landscape and English documentation
 
 - Translate all maintained documents into English while retaining earlier commit history.
