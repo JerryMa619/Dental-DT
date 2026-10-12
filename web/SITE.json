@@ -1,0 +1,11 @@
+{
+  "project_id": "appgprj_6acd393d9c588191bfc1f640628a7f0f",
+  "url": "https://dental-dt-framework.indigobud6.chatgpt.site",
+  "audience": "owner-private",
+  "source_commit": "0da5fb4515279bb952b260dd912e47cec6cb642e",
+  "github_implementation_commit": "1b65f260b2a70a7afe8588ffe9c610a699555ffb",
+  "dataset_through": "2026-10-12",
+  "static_snapshot": true,
+  "automatic_site_redeployment": false,
+  "browser_qa_performed": false
+}
