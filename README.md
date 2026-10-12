@@ -24,6 +24,8 @@ The [daily integration pipeline](prototype/INTEGRATION.md) connects synthetic ch
 
 [Longitudinal comparison and feedback](prototype/LONGITUDINAL.md) now attaches to each synthetic check-in; it does not infer clinical recovery.
 
+[Interactive explorer source](web/README.md) visualizes the data flow, framework, ontology and [requirement benchmark](evaluation/README.md).
+
 ## Documentation
 
 - [Acquisition specification and feasibility plan](docs/acquisition-specification-v0.1.md)

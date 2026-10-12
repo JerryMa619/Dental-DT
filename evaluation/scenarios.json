@@ -1,0 +1,166 @@
+[
+  {
+    "id": "B01",
+    "name": "Visible deposit with complete data",
+    "finding": "visible-deposit",
+    "quality": "accepted",
+    "symptoms": {},
+    "required": [
+      "C01"
+    ],
+    "forbidden": [
+      "E01"
+    ],
+    "expected_priority": "preventive-guidance"
+  },
+  {
+    "id": "B02",
+    "name": "Bleeding requires dental review",
+    "finding": "gingival-change",
+    "quality": "accepted",
+    "symptoms": {
+      "bleeding": true
+    },
+    "required": [
+      "R03",
+      "C01"
+    ],
+    "expected_priority": "professional-review"
+  },
+  {
+    "id": "B03",
+    "name": "Rejected scan requests repeat",
+    "finding": "visible-deposit",
+    "quality": "rejected",
+    "symptoms": {},
+    "required": [
+      "Q01"
+    ],
+    "forbidden": [
+      "C01"
+    ],
+    "expected_priority": "insufficient-data"
+  },
+  {
+    "id": "B04",
+    "name": "Emergency overrides poor scan",
+    "finding": "none",
+    "quality": "rejected",
+    "symptoms": {
+      "breathing_or_swallowing_difficulty": true,
+      "swelling": true
+    },
+    "required": [
+      "E01"
+    ],
+    "forbidden": [
+      "Q01",
+      "C01"
+    ],
+    "expected_priority": "emergency-review"
+  },
+  {
+    "id": "B05",
+    "name": "Ulcer over three weeks",
+    "finding": "none",
+    "quality": "accepted",
+    "symptoms": {
+      "ulcer_days": 22
+    },
+    "required": [
+      "R02"
+    ],
+    "expected_priority": "professional-review"
+  },
+  {
+    "id": "B06",
+    "name": "No supplied finding is not health clearance",
+    "finding": "none",
+    "quality": "accepted",
+    "symptoms": {},
+    "required": [
+      "N01"
+    ],
+    "expected_priority": "no-actionable-simulated-finding"
+  },
+  {
+    "id": "B07",
+    "name": "Surface change needs reference confirmation",
+    "finding": "surface-change",
+    "quality": "accepted",
+    "symptoms": {},
+    "required": [
+      "R05"
+    ],
+    "expected_priority": "professional-review"
+  },
+  {
+    "id": "B08",
+    "name": "Bleeding retained despite scan failure",
+    "finding": "none",
+    "quality": "rejected",
+    "symptoms": {
+      "bleeding": true
+    },
+    "required": [
+      "R03",
+      "Q01"
+    ],
+    "expected_priority": "professional-review"
+  },
+  {
+    "id": "B09",
+    "name": "Gingival change needs assessment",
+    "finding": "gingival-change",
+    "quality": "accepted",
+    "symptoms": {},
+    "required": [
+      "R04"
+    ],
+    "expected_priority": "professional-review"
+  },
+  {
+    "id": "B10",
+    "name": "Persistent ulcer plus scan failure",
+    "finding": "none",
+    "quality": "rejected",
+    "symptoms": {
+      "ulcer_days": 22
+    },
+    "required": [
+      "R02",
+      "Q01"
+    ],
+    "expected_priority": "professional-review"
+  },
+  {
+    "id": "B11",
+    "name": "Swelling should not receive generic cleaning",
+    "finding": "visible-deposit",
+    "quality": "accepted",
+    "symptoms": {
+      "swelling": true
+    },
+    "required": [
+      "R01"
+    ],
+    "forbidden": [
+      "C01"
+    ],
+    "expected_priority": "professional-review"
+  },
+  {
+    "id": "B12",
+    "name": "Persistent toothache needs review (known gap)",
+    "finding": "none",
+    "quality": "accepted",
+    "symptoms": {
+      "toothache_days": 3
+    },
+    "required": [],
+    "forbidden": [
+      "N01"
+    ],
+    "expected_priority": "professional-review"
+  }
+]

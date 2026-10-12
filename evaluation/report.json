@@ -1,0 +1,150 @@
+{
+  "version": "0.1.0",
+  "synthetic": true,
+  "scenario_count": 12,
+  "passed": 11,
+  "failed": 1,
+  "limitation": "Manual software-requirement scenarios, not independent clinician labels or clinical accuracy.",
+  "results": [
+    {
+      "id": "B01",
+      "name": "Visible deposit with complete data",
+      "passed": true,
+      "expected_priority": "preventive-guidance",
+      "actual_priority": "preventive-guidance",
+      "actual_rules": [
+        "C01"
+      ],
+      "errors": []
+    },
+    {
+      "id": "B02",
+      "name": "Bleeding requires dental review",
+      "passed": true,
+      "expected_priority": "professional-review",
+      "actual_priority": "professional-review",
+      "actual_rules": [
+        "C01",
+        "R03",
+        "R04"
+      ],
+      "errors": []
+    },
+    {
+      "id": "B03",
+      "name": "Rejected scan requests repeat",
+      "passed": true,
+      "expected_priority": "insufficient-data",
+      "actual_priority": "insufficient-data",
+      "actual_rules": [
+        "Q01"
+      ],
+      "errors": []
+    },
+    {
+      "id": "B04",
+      "name": "Emergency overrides poor scan",
+      "passed": true,
+      "expected_priority": "emergency-review",
+      "actual_priority": "emergency-review",
+      "actual_rules": [
+        "E01"
+      ],
+      "errors": []
+    },
+    {
+      "id": "B05",
+      "name": "Ulcer over three weeks",
+      "passed": true,
+      "expected_priority": "professional-review",
+      "actual_priority": "professional-review",
+      "actual_rules": [
+        "R02"
+      ],
+      "errors": []
+    },
+    {
+      "id": "B06",
+      "name": "No supplied finding is not health clearance",
+      "passed": true,
+      "expected_priority": "no-actionable-simulated-finding",
+      "actual_priority": "no-actionable-simulated-finding",
+      "actual_rules": [
+        "N01"
+      ],
+      "errors": []
+    },
+    {
+      "id": "B07",
+      "name": "Surface change needs reference confirmation",
+      "passed": true,
+      "expected_priority": "professional-review",
+      "actual_priority": "professional-review",
+      "actual_rules": [
+        "R05"
+      ],
+      "errors": []
+    },
+    {
+      "id": "B08",
+      "name": "Bleeding retained despite scan failure",
+      "passed": true,
+      "expected_priority": "professional-review",
+      "actual_priority": "professional-review",
+      "actual_rules": [
+        "Q01",
+        "R03"
+      ],
+      "errors": []
+    },
+    {
+      "id": "B09",
+      "name": "Gingival change needs assessment",
+      "passed": true,
+      "expected_priority": "professional-review",
+      "actual_priority": "professional-review",
+      "actual_rules": [
+        "C01",
+        "R04"
+      ],
+      "errors": []
+    },
+    {
+      "id": "B10",
+      "name": "Persistent ulcer plus scan failure",
+      "passed": true,
+      "expected_priority": "professional-review",
+      "actual_priority": "professional-review",
+      "actual_rules": [
+        "Q01",
+        "R02"
+      ],
+      "errors": []
+    },
+    {
+      "id": "B11",
+      "name": "Swelling should not receive generic cleaning",
+      "passed": true,
+      "expected_priority": "professional-review",
+      "actual_priority": "professional-review",
+      "actual_rules": [
+        "R01"
+      ],
+      "errors": []
+    },
+    {
+      "id": "B12",
+      "name": "Persistent toothache needs review (known gap)",
+      "passed": false,
+      "expected_priority": "professional-review",
+      "actual_priority": "no-actionable-simulated-finding",
+      "actual_rules": [
+        "N01"
+      ],
+      "errors": [
+        "Priority differs from requirement",
+        "Forbidden action present"
+      ]
+    }
+  ]
+}

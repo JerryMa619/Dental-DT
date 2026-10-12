@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-10-12 — Benchmark and interactive explorer
+
+- Add 12 manually authored requirement scenarios; 11 pass and persistent-pain gap remains explicit.
+- Add patient/day replay, data-flow inspectors, ISO entity mappings, ontology relationship view and benchmark results.
+- Export current dataset reproducibly; hosted page is a static snapshot, not automatically updated from GitHub.
+- Validate script syntax/data; browser QA unavailable.
+
 ## 2026-10-12 — Comparison and adherence
 
 - Add separate indicator directions and mixed/insufficient-data outcomes.

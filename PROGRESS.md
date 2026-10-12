@@ -32,6 +32,9 @@ Updated: 2026-10-12.
 - [x] Add same-site longitudinal comparison and explicitly reported advice adherence.
 - [x] Refresh derived histories with integration v0.2.0; 24 tests pass.
 
+- [x] Author 12 independent software-requirement scenarios; 11 meet requirements, persistent-toothache rule gap recorded.
+- [x] Build interactive explorer from 210 synthetic check-ins and 44 ontology classes; syntax/data checks pass, browser QA unavailable.
+
 ## In progress
 
 - [ ] Integrate symptom/advice records with scan snapshots and RDF export; add extension SHACL constraints.
