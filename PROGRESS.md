@@ -26,6 +26,9 @@ Updated: 2026-10-12.
 - [x] Bootstrap 210 structured synthetic records for 30 users over seven simulated days.
 - [x] Add deterministic daily generator and patient-separated splits; 16 tests pass.
 
+- [x] Integrate 210 daily records into 30 synthetic patient DT histories (167 snapshots, 285 draft recommendations).
+- [x] Pass 20 tests, including integration provenance and procedural-label exclusion.
+
 ## In progress
 
 - [ ] Integrate symptom/advice records with scan snapshots and RDF export; add extension SHACL constraints.

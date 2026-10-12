@@ -20,6 +20,8 @@ A separate [synthetic advice and follow-up demonstration](prototype/ADVICE.md) c
 
 [Longitudinal dataset](datasets/synthetic/README.md): 30 fictional users, daily JSONL shards and a reproducible generator. Structured simulation only; no image or clinical training claims.
 
+The [daily integration pipeline](prototype/INTEGRATION.md) connects synthetic checks, DT snapshots and evidence-linked recommendations.
+
 ## Documentation
 
 - [Acquisition specification and feasibility plan](docs/acquisition-specification-v0.1.md)

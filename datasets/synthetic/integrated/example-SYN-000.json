@@ -1,0 +1,705 @@
+{
+  "patient_id": "SYN-000",
+  "sessions": [
+    {
+      "session_id": "2026-10-06:SYN-000",
+      "captured_at": "2026-10-06T08:00:00+01:00",
+      "input_digest": "ba9dd41e6ff361923917f1aaee7a00fabe8c46bed7ec26956b18507df0bc9209",
+      "result": {
+        "session_id": "2026-10-06:SYN-000",
+        "synthetic": true,
+        "snapshot_created": true,
+        "actions": [],
+        "clinical_assessment": "not-performed",
+        "scope_note": "Quality status is synthetic input; no image analysis or healthy-mouth conclusion.",
+        "snapshot_id": "snapshot-1"
+      }
+    },
+    {
+      "session_id": "2026-10-07:SYN-000",
+      "captured_at": "2026-10-07T08:00:00+01:00",
+      "input_digest": "8f6f7277db6af893a9beb3be9ab3dacdffef360a59ba4c37e8943579af7ab266",
+      "result": {
+        "session_id": "2026-10-07:SYN-000",
+        "synthetic": true,
+        "snapshot_created": true,
+        "actions": [],
+        "clinical_assessment": "not-performed",
+        "scope_note": "Quality status is synthetic input; no image analysis or healthy-mouth conclusion.",
+        "snapshot_id": "snapshot-2"
+      }
+    },
+    {
+      "session_id": "2026-10-08:SYN-000",
+      "captured_at": "2026-10-08T08:00:00+01:00",
+      "input_digest": "9e41f7c320371123014e2c4c890b5d18da90abc4f9160385f9e78b805ff44280",
+      "result": {
+        "session_id": "2026-10-08:SYN-000",
+        "synthetic": true,
+        "snapshot_created": true,
+        "actions": [],
+        "clinical_assessment": "not-performed",
+        "scope_note": "Quality status is synthetic input; no image analysis or healthy-mouth conclusion.",
+        "snapshot_id": "snapshot-3"
+      }
+    },
+    {
+      "session_id": "2026-10-09:SYN-000",
+      "captured_at": "2026-10-09T08:00:00+01:00",
+      "input_digest": "721bf2444bea79b1124d1724d52d1b432e6d8000aaf5360fe8fbf17d8f755fcf",
+      "result": {
+        "session_id": "2026-10-09:SYN-000",
+        "synthetic": true,
+        "snapshot_created": true,
+        "actions": [],
+        "clinical_assessment": "not-performed",
+        "scope_note": "Quality status is synthetic input; no image analysis or healthy-mouth conclusion.",
+        "snapshot_id": "snapshot-4"
+      }
+    },
+    {
+      "session_id": "2026-10-10:SYN-000",
+      "captured_at": "2026-10-10T08:00:00+01:00",
+      "input_digest": "ae82e6e7434b3803791e62addf700cca17ac842717f37b772c364c7c8487a168",
+      "result": {
+        "session_id": "2026-10-10:SYN-000",
+        "synthetic": true,
+        "snapshot_created": false,
+        "actions": [
+          {
+            "action": "repeat-scan",
+            "tooth_code": "46",
+            "surface": "buccal",
+            "reason": "Synthetic acquisition rejected; signals unavailable.",
+            "evidence_session": "2026-10-10:SYN-000",
+            "review_status": "unreviewed"
+          }
+        ],
+        "clinical_assessment": "not-performed",
+        "scope_note": "Quality status is synthetic input; no image analysis or healthy-mouth conclusion."
+      }
+    },
+    {
+      "session_id": "2026-10-11:SYN-000",
+      "captured_at": "2026-10-11T08:00:00+01:00",
+      "input_digest": "72d9ea1fe00e3654c74967803494faff579680cff500240e78114be5824f5497",
+      "result": {
+        "session_id": "2026-10-11:SYN-000",
+        "synthetic": true,
+        "snapshot_created": true,
+        "actions": [],
+        "clinical_assessment": "not-performed",
+        "scope_note": "Quality status is synthetic input; no image analysis or healthy-mouth conclusion.",
+        "snapshot_id": "snapshot-5"
+      }
+    },
+    {
+      "session_id": "2026-10-12:SYN-000",
+      "captured_at": "2026-10-12T08:00:00+01:00",
+      "input_digest": "6aab2c6cf6f0d46b822e49e2f3fe6ca16e616bed74741cc95a50c01b2b037036",
+      "result": {
+        "session_id": "2026-10-12:SYN-000",
+        "synthetic": true,
+        "snapshot_created": false,
+        "actions": [
+          {
+            "action": "repeat-scan",
+            "tooth_code": "46",
+            "surface": "buccal",
+            "reason": "Synthetic acquisition rejected; signals unavailable.",
+            "evidence_session": "2026-10-12:SYN-000",
+            "review_status": "unreviewed"
+          }
+        ],
+        "clinical_assessment": "not-performed",
+        "scope_note": "Quality status is synthetic input; no image analysis or healthy-mouth conclusion."
+      }
+    }
+  ],
+  "snapshots": [
+    {
+      "snapshot_id": "snapshot-1",
+      "previous_snapshot": null,
+      "patient_id": "SYN-000",
+      "session_id": "2026-10-06:SYN-000",
+      "captured_at": "2026-10-06T08:00:00+01:00",
+      "scope": "complete-for-requested-regions",
+      "current_regions": [
+        "46:buccal"
+      ],
+      "unobserved_current_regions": [],
+      "regions": {
+        "46:buccal": {
+          "artifact_ids": [
+            "2026-10-06:SYN-000:observation"
+          ],
+          "source_session": "2026-10-06:SYN-000",
+          "captured_at": "2026-10-06T08:00:00+01:00",
+          "calibration_id": "synthetic-cal-0.1.0"
+        }
+      }
+    },
+    {
+      "snapshot_id": "snapshot-2",
+      "previous_snapshot": "snapshot-1",
+      "patient_id": "SYN-000",
+      "session_id": "2026-10-07:SYN-000",
+      "captured_at": "2026-10-07T08:00:00+01:00",
+      "scope": "complete-for-requested-regions",
+      "current_regions": [
+        "46:buccal"
+      ],
+      "unobserved_current_regions": [],
+      "regions": {
+        "46:buccal": {
+          "artifact_ids": [
+            "2026-10-07:SYN-000:observation"
+          ],
+          "source_session": "2026-10-07:SYN-000",
+          "captured_at": "2026-10-07T08:00:00+01:00",
+          "calibration_id": "synthetic-cal-0.1.0"
+        }
+      }
+    },
+    {
+      "snapshot_id": "snapshot-3",
+      "previous_snapshot": "snapshot-2",
+      "patient_id": "SYN-000",
+      "session_id": "2026-10-08:SYN-000",
+      "captured_at": "2026-10-08T08:00:00+01:00",
+      "scope": "complete-for-requested-regions",
+      "current_regions": [
+        "46:buccal"
+      ],
+      "unobserved_current_regions": [],
+      "regions": {
+        "46:buccal": {
+          "artifact_ids": [
+            "2026-10-08:SYN-000:observation"
+          ],
+          "source_session": "2026-10-08:SYN-000",
+          "captured_at": "2026-10-08T08:00:00+01:00",
+          "calibration_id": "synthetic-cal-0.1.0"
+        }
+      }
+    },
+    {
+      "snapshot_id": "snapshot-4",
+      "previous_snapshot": "snapshot-3",
+      "patient_id": "SYN-000",
+      "session_id": "2026-10-09:SYN-000",
+      "captured_at": "2026-10-09T08:00:00+01:00",
+      "scope": "complete-for-requested-regions",
+      "current_regions": [
+        "46:buccal"
+      ],
+      "unobserved_current_regions": [],
+      "regions": {
+        "46:buccal": {
+          "artifact_ids": [
+            "2026-10-09:SYN-000:observation"
+          ],
+          "source_session": "2026-10-09:SYN-000",
+          "captured_at": "2026-10-09T08:00:00+01:00",
+          "calibration_id": "synthetic-cal-0.1.0"
+        }
+      }
+    },
+    {
+      "snapshot_id": "snapshot-5",
+      "previous_snapshot": "snapshot-4",
+      "patient_id": "SYN-000",
+      "session_id": "2026-10-11:SYN-000",
+      "captured_at": "2026-10-11T08:00:00+01:00",
+      "scope": "complete-for-requested-regions",
+      "current_regions": [
+        "46:buccal"
+      ],
+      "unobserved_current_regions": [],
+      "regions": {
+        "46:buccal": {
+          "artifact_ids": [
+            "2026-10-11:SYN-000:observation"
+          ],
+          "source_session": "2026-10-11:SYN-000",
+          "captured_at": "2026-10-11T08:00:00+01:00",
+          "calibration_id": "synthetic-cal-0.1.0"
+        }
+      }
+    }
+  ],
+  "checkins": [
+    {
+      "checkin_id": "2026-10-06:SYN-000",
+      "synthetic": true,
+      "patient_id": "SYN-000",
+      "split": "train",
+      "captured_at": "2026-10-06T08:00:00+01:00",
+      "previous_checkin_id": null,
+      "session_id": "2026-10-06:SYN-000",
+      "snapshot_id": "SYN-000/snapshot-1",
+      "previous_snapshot_id": null,
+      "symptom_report": {
+        "id": "2026-10-06:SYN-000:symptoms",
+        "values": {
+          "bleeding": true,
+          "breathing_or_swallowing_difficulty": false,
+          "swelling": false,
+          "ulcer_days": 0
+        }
+      },
+      "quality_record": {
+        "id": "2026-10-06:SYN-000:quality",
+        "status": "accepted"
+      },
+      "observation": {
+        "id": "2026-10-06:SYN-000:observation",
+        "site": {
+          "surface": "buccal",
+          "tooth_code": "46"
+        },
+        "values": {
+          "deposit_score": 0.079,
+          "redness_score": 0.2035
+        },
+        "available": true,
+        "origin": "procedural-simulation; no image artifact"
+      },
+      "assessment": {
+        "id": "2026-10-06:SYN-000:assessment",
+        "type": "synthetic-rule-evaluation",
+        "evidence_ids": [
+          "2026-10-06:SYN-000:symptoms",
+          "2026-10-06:SYN-000:quality",
+          "2026-10-06:SYN-000:observation"
+        ],
+        "diagnosis": "not-performed"
+      },
+      "recommendations": [
+        {
+          "rule_id": "R03",
+          "text": "Arrange dental review for reported gum bleeding.",
+          "source": "https://www.nhs.uk/conditions/gum-disease/",
+          "origin": "guideline-derived draft",
+          "recommendation_id": "2026-10-06:SYN-000:recommendation:0",
+          "assessment_id": "2026-10-06:SYN-000:assessment",
+          "evidence_ids": [
+            "2026-10-06:SYN-000:symptoms",
+            "2026-10-06:SYN-000:quality",
+            "2026-10-06:SYN-000:observation"
+          ],
+          "site": {
+            "surface": "buccal",
+            "tooth_code": "46"
+          }
+        }
+      ],
+      "priority": "professional-review",
+      "notification": "not-sent"
+    },
+    {
+      "checkin_id": "2026-10-07:SYN-000",
+      "synthetic": true,
+      "patient_id": "SYN-000",
+      "split": "train",
+      "captured_at": "2026-10-07T08:00:00+01:00",
+      "previous_checkin_id": "2026-10-06:SYN-000",
+      "session_id": "2026-10-07:SYN-000",
+      "snapshot_id": "SYN-000/snapshot-2",
+      "previous_snapshot_id": "SYN-000/snapshot-1",
+      "symptom_report": {
+        "id": "2026-10-07:SYN-000:symptoms",
+        "values": {
+          "bleeding": false,
+          "breathing_or_swallowing_difficulty": false,
+          "swelling": false,
+          "ulcer_days": 0
+        }
+      },
+      "quality_record": {
+        "id": "2026-10-07:SYN-000:quality",
+        "status": "accepted"
+      },
+      "observation": {
+        "id": "2026-10-07:SYN-000:observation",
+        "site": {
+          "surface": "buccal",
+          "tooth_code": "46"
+        },
+        "values": {
+          "deposit_score": 0.1551,
+          "redness_score": 0.1709
+        },
+        "available": true,
+        "origin": "procedural-simulation; no image artifact"
+      },
+      "assessment": {
+        "id": "2026-10-07:SYN-000:assessment",
+        "type": "synthetic-rule-evaluation",
+        "evidence_ids": [
+          "2026-10-07:SYN-000:symptoms",
+          "2026-10-07:SYN-000:quality",
+          "2026-10-07:SYN-000:observation"
+        ],
+        "diagnosis": "not-performed"
+      },
+      "recommendations": [
+        {
+          "rule_id": "N01",
+          "text": "No supplied simulated finding; this is not a healthy-mouth conclusion.",
+          "source": null,
+          "origin": "engineering rule",
+          "recommendation_id": "2026-10-07:SYN-000:recommendation:0",
+          "assessment_id": "2026-10-07:SYN-000:assessment",
+          "evidence_ids": [
+            "2026-10-07:SYN-000:symptoms",
+            "2026-10-07:SYN-000:quality",
+            "2026-10-07:SYN-000:observation"
+          ],
+          "site": {
+            "surface": "buccal",
+            "tooth_code": "46"
+          }
+        }
+      ],
+      "priority": "no-actionable-simulated-finding",
+      "notification": "not-sent"
+    },
+    {
+      "checkin_id": "2026-10-08:SYN-000",
+      "synthetic": true,
+      "patient_id": "SYN-000",
+      "split": "train",
+      "captured_at": "2026-10-08T08:00:00+01:00",
+      "previous_checkin_id": "2026-10-07:SYN-000",
+      "session_id": "2026-10-08:SYN-000",
+      "snapshot_id": "SYN-000/snapshot-3",
+      "previous_snapshot_id": "SYN-000/snapshot-2",
+      "symptom_report": {
+        "id": "2026-10-08:SYN-000:symptoms",
+        "values": {
+          "bleeding": false,
+          "breathing_or_swallowing_difficulty": false,
+          "swelling": false,
+          "ulcer_days": 0
+        }
+      },
+      "quality_record": {
+        "id": "2026-10-08:SYN-000:quality",
+        "status": "accepted"
+      },
+      "observation": {
+        "id": "2026-10-08:SYN-000:observation",
+        "site": {
+          "surface": "buccal",
+          "tooth_code": "46"
+        },
+        "values": {
+          "deposit_score": 0.0819,
+          "redness_score": 0.0822
+        },
+        "available": true,
+        "origin": "procedural-simulation; no image artifact"
+      },
+      "assessment": {
+        "id": "2026-10-08:SYN-000:assessment",
+        "type": "synthetic-rule-evaluation",
+        "evidence_ids": [
+          "2026-10-08:SYN-000:symptoms",
+          "2026-10-08:SYN-000:quality",
+          "2026-10-08:SYN-000:observation"
+        ],
+        "diagnosis": "not-performed"
+      },
+      "recommendations": [
+        {
+          "rule_id": "N01",
+          "text": "No supplied simulated finding; this is not a healthy-mouth conclusion.",
+          "source": null,
+          "origin": "engineering rule",
+          "recommendation_id": "2026-10-08:SYN-000:recommendation:0",
+          "assessment_id": "2026-10-08:SYN-000:assessment",
+          "evidence_ids": [
+            "2026-10-08:SYN-000:symptoms",
+            "2026-10-08:SYN-000:quality",
+            "2026-10-08:SYN-000:observation"
+          ],
+          "site": {
+            "surface": "buccal",
+            "tooth_code": "46"
+          }
+        }
+      ],
+      "priority": "no-actionable-simulated-finding",
+      "notification": "not-sent"
+    },
+    {
+      "checkin_id": "2026-10-09:SYN-000",
+      "synthetic": true,
+      "patient_id": "SYN-000",
+      "split": "train",
+      "captured_at": "2026-10-09T08:00:00+01:00",
+      "previous_checkin_id": "2026-10-08:SYN-000",
+      "session_id": "2026-10-09:SYN-000",
+      "snapshot_id": "SYN-000/snapshot-4",
+      "previous_snapshot_id": "SYN-000/snapshot-3",
+      "symptom_report": {
+        "id": "2026-10-09:SYN-000:symptoms",
+        "values": {
+          "bleeding": false,
+          "breathing_or_swallowing_difficulty": false,
+          "swelling": false,
+          "ulcer_days": 0
+        }
+      },
+      "quality_record": {
+        "id": "2026-10-09:SYN-000:quality",
+        "status": "accepted"
+      },
+      "observation": {
+        "id": "2026-10-09:SYN-000:observation",
+        "site": {
+          "surface": "buccal",
+          "tooth_code": "46"
+        },
+        "values": {
+          "deposit_score": 0.2884,
+          "redness_score": 0.0987
+        },
+        "available": true,
+        "origin": "procedural-simulation; no image artifact"
+      },
+      "assessment": {
+        "id": "2026-10-09:SYN-000:assessment",
+        "type": "synthetic-rule-evaluation",
+        "evidence_ids": [
+          "2026-10-09:SYN-000:symptoms",
+          "2026-10-09:SYN-000:quality",
+          "2026-10-09:SYN-000:observation"
+        ],
+        "diagnosis": "not-performed"
+      },
+      "recommendations": [
+        {
+          "rule_id": "N01",
+          "text": "No supplied simulated finding; this is not a healthy-mouth conclusion.",
+          "source": null,
+          "origin": "engineering rule",
+          "recommendation_id": "2026-10-09:SYN-000:recommendation:0",
+          "assessment_id": "2026-10-09:SYN-000:assessment",
+          "evidence_ids": [
+            "2026-10-09:SYN-000:symptoms",
+            "2026-10-09:SYN-000:quality",
+            "2026-10-09:SYN-000:observation"
+          ],
+          "site": {
+            "surface": "buccal",
+            "tooth_code": "46"
+          }
+        }
+      ],
+      "priority": "no-actionable-simulated-finding",
+      "notification": "not-sent"
+    },
+    {
+      "checkin_id": "2026-10-10:SYN-000",
+      "synthetic": true,
+      "patient_id": "SYN-000",
+      "split": "train",
+      "captured_at": "2026-10-10T08:00:00+01:00",
+      "previous_checkin_id": "2026-10-09:SYN-000",
+      "session_id": "2026-10-10:SYN-000",
+      "snapshot_id": null,
+      "previous_snapshot_id": "SYN-000/snapshot-4",
+      "symptom_report": {
+        "id": "2026-10-10:SYN-000:symptoms",
+        "values": {
+          "bleeding": false,
+          "breathing_or_swallowing_difficulty": false,
+          "swelling": false,
+          "ulcer_days": 0
+        }
+      },
+      "quality_record": {
+        "id": "2026-10-10:SYN-000:quality",
+        "status": "rejected"
+      },
+      "observation": {
+        "id": "2026-10-10:SYN-000:observation",
+        "site": {
+          "surface": "buccal",
+          "tooth_code": "46"
+        },
+        "values": {
+          "deposit_score": null,
+          "redness_score": null
+        },
+        "available": false,
+        "origin": "procedural-simulation; no image artifact"
+      },
+      "assessment": {
+        "id": "2026-10-10:SYN-000:assessment",
+        "type": "synthetic-rule-evaluation",
+        "evidence_ids": [
+          "2026-10-10:SYN-000:symptoms",
+          "2026-10-10:SYN-000:quality"
+        ],
+        "diagnosis": "not-performed"
+      },
+      "recommendations": [
+        {
+          "rule_id": "Q01",
+          "text": "Repeat the affected scan region; do not infer health from missing data.",
+          "source": null,
+          "origin": "engineering rule",
+          "recommendation_id": "2026-10-10:SYN-000:recommendation:0",
+          "assessment_id": "2026-10-10:SYN-000:assessment",
+          "evidence_ids": [
+            "2026-10-10:SYN-000:symptoms",
+            "2026-10-10:SYN-000:quality"
+          ],
+          "site": {
+            "surface": "buccal",
+            "tooth_code": "46"
+          }
+        }
+      ],
+      "priority": "insufficient-data",
+      "notification": "not-sent"
+    },
+    {
+      "checkin_id": "2026-10-11:SYN-000",
+      "synthetic": true,
+      "patient_id": "SYN-000",
+      "split": "train",
+      "captured_at": "2026-10-11T08:00:00+01:00",
+      "previous_checkin_id": "2026-10-10:SYN-000",
+      "session_id": "2026-10-11:SYN-000",
+      "snapshot_id": "SYN-000/snapshot-5",
+      "previous_snapshot_id": "SYN-000/snapshot-4",
+      "symptom_report": {
+        "id": "2026-10-11:SYN-000:symptoms",
+        "values": {
+          "bleeding": false,
+          "breathing_or_swallowing_difficulty": false,
+          "swelling": false,
+          "ulcer_days": 0
+        }
+      },
+      "quality_record": {
+        "id": "2026-10-11:SYN-000:quality",
+        "status": "accepted"
+      },
+      "observation": {
+        "id": "2026-10-11:SYN-000:observation",
+        "site": {
+          "surface": "buccal",
+          "tooth_code": "46"
+        },
+        "values": {
+          "deposit_score": 0.0479,
+          "redness_score": 0.0657
+        },
+        "available": true,
+        "origin": "procedural-simulation; no image artifact"
+      },
+      "assessment": {
+        "id": "2026-10-11:SYN-000:assessment",
+        "type": "synthetic-rule-evaluation",
+        "evidence_ids": [
+          "2026-10-11:SYN-000:symptoms",
+          "2026-10-11:SYN-000:quality",
+          "2026-10-11:SYN-000:observation"
+        ],
+        "diagnosis": "not-performed"
+      },
+      "recommendations": [
+        {
+          "rule_id": "N01",
+          "text": "No supplied simulated finding; this is not a healthy-mouth conclusion.",
+          "source": null,
+          "origin": "engineering rule",
+          "recommendation_id": "2026-10-11:SYN-000:recommendation:0",
+          "assessment_id": "2026-10-11:SYN-000:assessment",
+          "evidence_ids": [
+            "2026-10-11:SYN-000:symptoms",
+            "2026-10-11:SYN-000:quality",
+            "2026-10-11:SYN-000:observation"
+          ],
+          "site": {
+            "surface": "buccal",
+            "tooth_code": "46"
+          }
+        }
+      ],
+      "priority": "no-actionable-simulated-finding",
+      "notification": "not-sent"
+    },
+    {
+      "checkin_id": "2026-10-12:SYN-000",
+      "synthetic": true,
+      "patient_id": "SYN-000",
+      "split": "train",
+      "captured_at": "2026-10-12T08:00:00+01:00",
+      "previous_checkin_id": "2026-10-11:SYN-000",
+      "session_id": "2026-10-12:SYN-000",
+      "snapshot_id": null,
+      "previous_snapshot_id": "SYN-000/snapshot-5",
+      "symptom_report": {
+        "id": "2026-10-12:SYN-000:symptoms",
+        "values": {
+          "bleeding": false,
+          "breathing_or_swallowing_difficulty": false,
+          "swelling": false,
+          "ulcer_days": 0
+        }
+      },
+      "quality_record": {
+        "id": "2026-10-12:SYN-000:quality",
+        "status": "rejected"
+      },
+      "observation": {
+        "id": "2026-10-12:SYN-000:observation",
+        "site": {
+          "surface": "buccal",
+          "tooth_code": "46"
+        },
+        "values": {
+          "deposit_score": null,
+          "redness_score": null
+        },
+        "available": false,
+        "origin": "procedural-simulation; no image artifact"
+      },
+      "assessment": {
+        "id": "2026-10-12:SYN-000:assessment",
+        "type": "synthetic-rule-evaluation",
+        "evidence_ids": [
+          "2026-10-12:SYN-000:symptoms",
+          "2026-10-12:SYN-000:quality"
+        ],
+        "diagnosis": "not-performed"
+      },
+      "recommendations": [
+        {
+          "rule_id": "Q01",
+          "text": "Repeat the affected scan region; do not infer health from missing data.",
+          "source": null,
+          "origin": "engineering rule",
+          "recommendation_id": "2026-10-12:SYN-000:recommendation:0",
+          "assessment_id": "2026-10-12:SYN-000:assessment",
+          "evidence_ids": [
+            "2026-10-12:SYN-000:symptoms",
+            "2026-10-12:SYN-000:quality"
+          ],
+          "site": {
+            "surface": "buccal",
+            "tooth_code": "46"
+          }
+        }
+      ],
+      "priority": "insufficient-data",
+      "notification": "not-sent"
+    }
+  ]
+}

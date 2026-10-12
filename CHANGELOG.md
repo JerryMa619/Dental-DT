@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-10-12 — Integrated daily DT histories
+
+- Connect synthetic daily observations, symptoms, quality, snapshots and recommendations.
+- Recompute advice from synthetic input rather than procedural targets/stored outputs.
+- Preserve rejected check-ins without new snapshots; add evidence IDs and patient-global snapshot references.
+- Rebuild 30 patient histories; pass 20 tests. Save reproducible summary and one example history.
+
 ## 2026-10-12 — Longitudinal synthetic dataset
 
 - Bootstrap seven daily shards with 30 fictional users each (210 records).
