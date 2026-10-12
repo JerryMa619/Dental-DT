@@ -16,6 +16,10 @@ A synthetic acquisition-to-twin data pipeline is available. See [prototype instr
 
 A separate [synthetic advice and follow-up demonstration](prototype/ADVICE.md) covers supplied mild-problem findings and selected escalation conditions. Its rules are drafts, not clinical validation.
 
+## Synthetic dataset
+
+[Longitudinal dataset](datasets/synthetic/README.md): 30 fictional users, daily JSONL shards and a reproducible generator. Structured simulation only; no image or clinical training claims.
+
 ## Documentation
 
 - [Acquisition specification and feasibility plan](docs/acquisition-specification-v0.1.md)

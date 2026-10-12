@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-10-12 — Longitudinal synthetic dataset
+
+- Bootstrap seven daily shards with 30 fictional users each (210 records).
+- Add deterministic trajectories, noisy observations, failed acquisitions and draft rule outputs.
+- Separate predictors from procedural labels and split by patient.
+- Pass 16 tests; no image data or clinical validity claimed.
+
 ## 2026-10-12 — Synthetic advice and follow-up
 
 - Add six synthetic scenarios, evidence-linked draft advice and symptom follow-up.

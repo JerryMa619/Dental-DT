@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1.0",
+  "generator_version": "0.1.0",
+  "synthetic": true,
+  "cohort_size": 30,
+  "dates": [
+    "2026-10-06",
+    "2026-10-07",
+    "2026-10-08",
+    "2026-10-09",
+    "2026-10-10",
+    "2026-10-11",
+    "2026-10-12"
+  ],
+  "total_records": 210,
+  "bootstrap_backfill": true,
+  "timezone": "Europe/London",
+  "simulated_capture_time": "08:00",
+  "train_users": 21,
+  "validation_users": 4,
+  "test_users": 5,
+  "last_updated_date": "2026-10-12"
+}

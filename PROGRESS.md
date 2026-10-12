@@ -23,6 +23,9 @@ Updated: 2026-10-12.
 - [x] Add home ontology extension; parse 38 triples.
 - [x] Pass seven advice tests and five existing pipeline tests (12 total).
 
+- [x] Bootstrap 210 structured synthetic records for 30 users over seven simulated days.
+- [x] Add deterministic daily generator and patient-separated splits; 16 tests pass.
+
 ## In progress
 
 - [ ] Integrate symptom/advice records with scan snapshots and RDF export; add extension SHACL constraints.
