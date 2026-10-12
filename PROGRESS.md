@@ -14,6 +14,8 @@ Updated: 2026-10-12.
 
 - [x] Record user-confirmed home detection-and-advice purpose and six candidate capability requirements.
 
+- [x] Draft acquisition requirements, region coverage, data contract and staged feasibility gates for H01-H03.
+
 ## In progress
 
 - [ ] Select initial clinical use case and observation requirements.

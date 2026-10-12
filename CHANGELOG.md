@@ -1,5 +1,11 @@
 # Change Log
 
+## 2026-10-12 — Acquisition specification
+
+- Map the first three capability candidates to acquisition data and reference tests.
+- Define regional coverage, quality feedback, session-bound calibration and change uncertainty.
+- Specify bench-to-clinical feasibility gates and metric definitions; performance thresholds remain TBD.
+
 ## 2026-10-12 — Home detection and advice requirements
 
 - Record corrected purpose: detection and advice for selected mild problems, not triage alone.

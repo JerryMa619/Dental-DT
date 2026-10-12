@@ -12,6 +12,7 @@ Draft DT architecture and executable ontology v0.1, alongside preliminary sensor
 
 ## Documentation
 
+- [Acquisition specification and feasibility plan](docs/acquisition-specification-v0.1.md)
 - [DT architecture v0.1](docs/ddt-architecture-v0.1.md)
 - [ISO 23247 framework](docs/iso23247-framework.md)
 - [Dental sensors and condition mapping](research/dental-sensors-landscape.md)
