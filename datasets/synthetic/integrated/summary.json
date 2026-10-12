@@ -5,7 +5,7 @@
   "snapshots": 167,
   "no_snapshot_checkins": 43,
   "recommendations": 285,
-  "integration_version": "0.1.0",
+  "integration_version": "0.2.0",
   "clinical_detection": false,
   "real_images": false
 }

@@ -295,7 +295,13 @@
         }
       ],
       "priority": "professional-review",
-      "notification": "not-sent"
+      "notification": "not-sent",
+      "longitudinal_comparison": {
+        "status": "no-baseline",
+        "clinical_meaning": "not-established"
+      },
+      "adherence_feedback": [],
+      "adherence_status": "not-reported"
     },
     {
       "checkin_id": "2026-10-07:SYN-000",
@@ -363,7 +369,26 @@
         }
       ],
       "priority": "no-actionable-simulated-finding",
-      "notification": "not-sent"
+      "notification": "not-sent",
+      "longitudinal_comparison": {
+        "status": "within-demo-tolerance",
+        "previous_checkin_id": "2026-10-06:SYN-000",
+        "metrics": {
+          "deposit_score": {
+            "delta": 0.0761,
+            "direction": "within-demo-tolerance"
+          },
+          "redness_score": {
+            "delta": -0.0326,
+            "direction": "within-demo-tolerance"
+          }
+        },
+        "demo_tolerance": 0.1,
+        "clinical_meaning": "not-established",
+        "causality": "No claim that advice caused the change."
+      },
+      "adherence_feedback": [],
+      "adherence_status": "not-reported"
     },
     {
       "checkin_id": "2026-10-08:SYN-000",
@@ -431,7 +456,26 @@
         }
       ],
       "priority": "no-actionable-simulated-finding",
-      "notification": "not-sent"
+      "notification": "not-sent",
+      "longitudinal_comparison": {
+        "status": "within-demo-tolerance",
+        "previous_checkin_id": "2026-10-07:SYN-000",
+        "metrics": {
+          "deposit_score": {
+            "delta": -0.0732,
+            "direction": "within-demo-tolerance"
+          },
+          "redness_score": {
+            "delta": -0.0887,
+            "direction": "within-demo-tolerance"
+          }
+        },
+        "demo_tolerance": 0.1,
+        "clinical_meaning": "not-established",
+        "causality": "No claim that advice caused the change."
+      },
+      "adherence_feedback": [],
+      "adherence_status": "not-reported"
     },
     {
       "checkin_id": "2026-10-09:SYN-000",
@@ -499,7 +543,26 @@
         }
       ],
       "priority": "no-actionable-simulated-finding",
-      "notification": "not-sent"
+      "notification": "not-sent",
+      "longitudinal_comparison": {
+        "status": "simulated-indicators-increased",
+        "previous_checkin_id": "2026-10-08:SYN-000",
+        "metrics": {
+          "deposit_score": {
+            "delta": 0.2065,
+            "direction": "increased"
+          },
+          "redness_score": {
+            "delta": 0.0165,
+            "direction": "within-demo-tolerance"
+          }
+        },
+        "demo_tolerance": 0.1,
+        "clinical_meaning": "not-established",
+        "causality": "No claim that advice caused the change."
+      },
+      "adherence_feedback": [],
+      "adherence_status": "not-reported"
     },
     {
       "checkin_id": "2026-10-10:SYN-000",
@@ -565,7 +628,14 @@
         }
       ],
       "priority": "insufficient-data",
-      "notification": "not-sent"
+      "notification": "not-sent",
+      "longitudinal_comparison": {
+        "status": "insufficient-data",
+        "previous_checkin_id": "2026-10-09:SYN-000",
+        "clinical_meaning": "not-established"
+      },
+      "adherence_feedback": [],
+      "adherence_status": "not-reported"
     },
     {
       "checkin_id": "2026-10-11:SYN-000",
@@ -633,7 +703,14 @@
         }
       ],
       "priority": "no-actionable-simulated-finding",
-      "notification": "not-sent"
+      "notification": "not-sent",
+      "longitudinal_comparison": {
+        "status": "insufficient-data",
+        "previous_checkin_id": "2026-10-10:SYN-000",
+        "clinical_meaning": "not-established"
+      },
+      "adherence_feedback": [],
+      "adherence_status": "not-reported"
     },
     {
       "checkin_id": "2026-10-12:SYN-000",
@@ -699,7 +776,14 @@
         }
       ],
       "priority": "insufficient-data",
-      "notification": "not-sent"
+      "notification": "not-sent",
+      "longitudinal_comparison": {
+        "status": "insufficient-data",
+        "previous_checkin_id": "2026-10-11:SYN-000",
+        "clinical_meaning": "not-established"
+      },
+      "adherence_feedback": [],
+      "adherence_status": "not-reported"
     }
   ]
 }

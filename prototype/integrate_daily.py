@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 from prototype.pipeline import process
 from prototype.advice import evaluate
+from prototype.longitudinal import compare, validate_feedback
 
 def integrate(rows):
     states, checkins, seen, splits = {}, [], set(), {}
@@ -72,13 +73,17 @@ def integrate(rows):
                                   "evidence_ids": evidence, "diagnosis": "not-performed"},
                    "recommendations": advice["actions"], "priority": advice["priority"],
                    "notification": "not-sent"}
+        previous_checkin = state.get("checkins", [])[-1] if state.get("checkins") else None
+        checkin["longitudinal_comparison"] = compare(previous_checkin, checkin)
+        checkin["adherence_feedback"] = validate_feedback(row.get("adherence_feedback", []), previous_checkin, checkin)
+        checkin["adherence_status"] = "reported" if checkin["adherence_feedback"] else "not-reported"
         state.setdefault("checkins", []).append(checkin)
         checkins.append(checkin)
     summary = {"synthetic": True, "users": len(states), "checkins": len(checkins),
                "snapshots": sum(len(s["snapshots"]) for s in states.values()),
                "no_snapshot_checkins": sum(c["snapshot_id"] is None for c in checkins),
                "recommendations": sum(len(c["recommendations"]) for c in checkins),
-               "integration_version": "0.1.0",
+               "integration_version": "0.2.0",
                "clinical_detection": False, "real_images": False}
     return states, checkins, summary
 

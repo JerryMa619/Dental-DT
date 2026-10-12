@@ -29,6 +29,9 @@ Updated: 2026-10-12.
 - [x] Integrate 210 daily records into 30 synthetic patient DT histories (167 snapshots, 285 draft recommendations).
 - [x] Pass 20 tests, including integration provenance and procedural-label exclusion.
 
+- [x] Add same-site longitudinal comparison and explicitly reported advice adherence.
+- [x] Refresh derived histories with integration v0.2.0; 24 tests pass.
+
 ## In progress
 
 - [ ] Integrate symptom/advice records with scan snapshots and RDF export; add extension SHACL constraints.

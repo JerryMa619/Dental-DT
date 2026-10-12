@@ -22,6 +22,8 @@ A separate [synthetic advice and follow-up demonstration](prototype/ADVICE.md) c
 
 The [daily integration pipeline](prototype/INTEGRATION.md) connects synthetic checks, DT snapshots and evidence-linked recommendations.
 
+[Longitudinal comparison and feedback](prototype/LONGITUDINAL.md) now attaches to each synthetic check-in; it does not infer clinical recovery.
+
 ## Documentation
 
 - [Acquisition specification and feasibility plan](docs/acquisition-specification-v0.1.md)

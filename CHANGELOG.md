@@ -1,5 +1,11 @@
 # Change Log
 
+## 2026-10-12 — Comparison and adherence
+
+- Add separate indicator directions and mixed/insufficient-data outcomes.
+- Link user-reported feedback to prior recommendation IDs; missing feedback stays not-reported.
+- Refresh derived histories; pass 24 tests. Tolerance is illustrative, not clinical.
+
 ## 2026-10-12 — Integrated daily DT histories
 
 - Connect synthetic daily observations, symptoms, quality, snapshots and recommendations.
