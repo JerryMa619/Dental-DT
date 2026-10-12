@@ -1,0 +1,21 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
+const html=fs.readFileSync('web/index.html','utf8'), data=JSON.parse(fs.readFileSync('web/data.json','utf8'));
+const ids=new Set([...html.matchAll(/id="([^"]+)"/g)].map(m=>m[1])),elements={};
+for(const id of ids)elements[id]={value:id==='user'?'SYN-000':id==='speed'?'1800':0,style:{},classList:{toggle(){}},querySelectorAll(){return[]},click(){this.onclick?.()}};
+let tick;
+const context={console,document:{getElementById(id){assert(ids.has(id),'Missing element '+id);return elements[id]},querySelectorAll(){return[]}},setInterval(fn){tick=fn;return 1},clearInterval(){tick=null},fetch:()=>Promise.resolve({ok:true,json:()=>Promise.resolve(data)}),setTimeout,Blob,URL};
+context.window=context;vm.createContext(context);
+vm.runInContext(fs.readFileSync('web/flow-state.js','utf8'),context);
+vm.runInContext(fs.readFileSync('web/app.js','utf8'),context);
+setImmediate(()=>{
+ assert(elements.liveCanvas.innerHTML.includes('Animated end-to-end'));
+ elements.step.click();
+ assert(elements.liveTitle.textContent==='Acquisition');
+ assert(elements.liveCanvas.innerHTML.includes('animateMotion'));
+ elements.reset.click();
+ assert(elements.liveTitle.textContent==='Home check-in');
+ elements.play.click();assert.equal(typeof tick,'function');tick();
+ assert(elements.liveTitle.textContent==='Acquisition');
+ elements.play.click();assert.equal(tick,null);
+ console.log('PASS: script/DOM-contract smoke test, initial render, step/reset/play/pause and animated packet');
+});

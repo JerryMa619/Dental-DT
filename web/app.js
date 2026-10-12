@@ -38,7 +38,7 @@ function initialise(d){
  $('freshness').textContent='Data snapshot through '+d.checkins.map(c=>c.captured_at.slice(0,10)).sort().at(-1)+' · '+d.summary.integration_version;
  chooseUser();ontologyGraph();
 }
-function chooseUser(){stop();rows=data.checkins.filter(r=>r.patient_id===$('user').value).sort((a,b)=>a.captured_at.localeCompare(b.captured_at));day=0;$('day').max=rows.length-1;render();}
+function chooseUser(){stop();rows=data.checkins.filter(r=>r.patient_id===$('user').value).sort((a,b)=>a.captured_at.localeCompare(b.captured_at));day=0;replayPhase=0;stage=0;replayEvents=[];lastTransfer=null;$('day').max=rows.length-1;render();}
 function render(){
  current=rows[day];$('day').value=day;$('dateLabel').textContent=current.captured_at.slice(0,10);
  $('recordBadge').innerHTML='<span class="tag '+(current.observation.available?'':'warn')+'">'+(current.observation.available?'Accepted observation':'Rejected acquisition')+'</span>';
@@ -48,7 +48,7 @@ function render(){
  const c=current.longitudinal_comparison||{status:'not-computed'};
  $('comparison').innerHTML='<span class="tag">'+esc(c.status)+'</span><p class="sub">Compared with '+esc(c.previous_checkin_id||'no prior baseline')+'. Changes have no established clinical meaning.</p>'+Object.entries(c.metrics||{}).map(([k,v])=>'<div class="sub">'+esc(k)+' · '+esc(v.direction)+' · Δ '+esc(v.delta)+'</div>').join('');
  $('feedback').innerHTML='<span class="tag">'+esc(current.adherence_status||'not-reported')+'</span><p class="sub">No feedback is inferred from a lower signal. Reports do not prove execution or a causal effect.</p>';
- ontologySelect('Patient');
+ ontologySelect(liveConcepts[stage]||'Patient');liveFlow();
 }
 function nodeValue(i){return [current.patient_id,current.observation.site.tooth_code+' / '+current.observation.site.surface,current.quality_record.status,current.observation.available?'Procedural signals available':'No accepted signals',current.snapshot_id||'No new snapshot',current.longitudinal_comparison?.status||'Not computed',current.priority,current.recommendations.length+' evidence-linked actions',current.adherence_status||'not-reported'][i];}
 function stageData(i){return [
@@ -59,7 +59,7 @@ function stageData(i){return [
  current.longitudinal_comparison,current.assessment,current.recommendations,
  {adherence_status:current.adherence_status,adherence_feedback:current.adherence_feedback,notification:current.notification}
  ][i];}
-function inspect(){$('detailTitle').textContent=names[stage];$('detailDescription').textContent=descriptions[stage];$('detailJson').textContent=pretty(stageData(stage));}
+function inspect(){$('detailTitle').textContent=liveLabels[stage];$('detailDescription').textContent=liveNarration(stage);$('detailJson').textContent=pretty(liveStagePayload(stage));}
 function chart(){
  const W=560,H=190,p=28,n=rows.length,x=i=>p+i*(W-2*p)/Math.max(n-1,1),y=v=>H-p-v*(H-2*p);
  let svg='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Seven-day synthetic deposit and redness score history">';
@@ -96,11 +96,83 @@ function seventy(){return 70;}
 function ontologySelect(name){const n=graphNodes.find(x=>x[0]===name);if(!n)return;$('ontologyTitle').textContent=name;$('ontologyDescription').textContent=n[3];
  const mapping={Patient:{id:current.patient_id},ScanSession:stageData(0),SymptomReport:current.symptom_report,ToothSurface:current.observation.site,Observation:current.observation,QualityAssessment:current.quality_record,TwinSnapshot:stageData(4),ClinicalAssessment:current.assessment,Recommendation:current.recommendations,ModelVersion:{integration_version:data.summary.integration_version,clinical_model:false},AdviceProtocol:{rules:current.recommendations.map(r=>({rule_id:r.rule_id,source:r.source}))},FollowUpRecord:stageData(8)};
  $('ontologyJson').textContent=pretty(mapping[name]);}
-function stop(){if(timer)clearInterval(timer);timer=null;$('play').textContent='▶ Replay days';}
+function stop(){if(timer)clearInterval(timer);timer=null;$('play').textContent='▶ Play full pipeline';}
 $('user').onchange=chooseUser;
-$('day').oninput=()=>{stop();day=Number($('day').value);render();};
+$('day').oninput=()=>{stop();day=Number($('day').value);replayPhase=0;stage=0;replayEvents=[];lastTransfer=null;render();};
 $('play').onclick=()=>{if(timer){stop();return;}if(day===rows.length-1)day=-1;$('play').textContent='Ⅱ Pause';timer=setInterval(()=>{day++;render();if(day>=rows.length-1)stop();},1200);};
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('nav button').forEach(n=>n.classList.toggle('active',n===b));document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===b.dataset.tab));});
 $('download').onclick=()=>{const url=URL.createObjectURL(new Blob([pretty(current)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download=current.patient_id+'-'+current.captured_at.slice(0,10)+'.json';a.click();URL.revokeObjectURL(url);};
 $('importData').onchange=async e=>{try{stop();initialise(JSON.parse(await e.target.files[0].text()));$('status').textContent='Loaded local synthetic explorer data. No data uploaded.';}catch(err){$('status').textContent='Could not load data: '+err.message;}};
+
+// Full-process replay. Each stage exposes recorded evidence, including blocked branches.
+let replayPhase=0, replayEvents=[], lastTransfer=null;
+const liveLabels=[...names,'Rescan requested','Dentist handoff','Next daily check'];
+const liveConcepts=['Patient','ScanSession','QualityAssessment','Observation','TwinSnapshot','FollowUpRecord','ClinicalAssessment','Recommendation','FollowUpRecord','QualityAssessment','Recommendation','ScanSession'];
+const positions=[[85,65],[280,65],[475,65],[670,65],[670,210],[475,210],[280,210],[85,210],[85,355],[475,140],[280,355],[670,355]];
+function liveStagePayload(s){
+ if(s===9)return {branch:'quality-rejected',action:'request targeted rescan',recorded_response:'No same-day rescan in this dataset',new_snapshot:false};
+ if(s===10)return {notification:current.notification,channel_connected:false,mode:'visualized handoff only; no message transmitted'};
+ if(s===11)return {next_record:rows[day+1]?.checkin_id||null,feedback:current.adherence_status,next_day_is_recorded:!!rows[day+1]};
+ return stageData(s);
+}
+function liveNarration(s){
+ if(s===9)return 'Quality failed → request a rescan. No replacement measurement is fabricated. Symptoms still enter assessment.';
+ if(s===10)return 'Dentist handoff boundary: notifications are not connected. The animation shows the planned interface, not a sent message.';
+ if(s===11)return 'Close this check-in and move to the next recorded day. Feedback remains unknown unless explicitly reported.';
+ return descriptions[s];
+}
+function flowPath(a,b){
+ const A=positions[a],B=positions[b];
+ return 'M '+A[0]+' '+A[1]+' L '+B[0]+' '+B[1];
+}
+function liveFlow(){
+ const r=FlowPlayback.route(current), active=stage;
+ const routePairs=r.slice(1).map((b,i)=>[r[i],b]);
+ let svg='<svg viewBox="0 0 760 430" role="img" aria-label="Animated end-to-end dental twin data flow"><defs><marker id="tip" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#8aa598"/></marker></defs>';
+ svg+='<rect x="15" y="18" width="730" height="94" rx="14" fill="#e9f1e4"/><text x="25" y="33" font-size="9" fill="#6d8375">UE / PHYSICAL CONTEXT → DCDCE</text>';
+ svg+='<rect x="15" y="164" width="730" height="94" rx="14" fill="#edf0f9"/><text x="25" y="180" font-size="9" fill="#6d8375">CE / STATE AND INTERPRETATION</text>';
+ svg+='<rect x="15" y="306" width="730" height="94" rx="14" fill="#edf3e9"/><text x="25" y="322" font-size="9" fill="#6d8375">UE / ADVICE, FEEDBACK AND NEXT CHECK</text>';
+ routePairs.forEach(([a,b])=>svg+='<path d="'+flowPath(a,b)+'" fill="none" stroke="'+((a===lastTransfer?.[0]&&b===lastTransfer?.[1])?'#168375':'#adc0b2')+'" stroke-width="2" marker-end="url(#tip)" opacity=".7"/>');
+ const visible=new Set(r);
+ positions.forEach(([x,y],i)=>{
+ const skipped=!visible.has(i),on=i===active;
+ svg+='<g class="live-node '+(on?'on':'')+'" data-live-stage="'+i+'" role="button" tabindex="0" aria-label="'+liveLabels[i]+'"><rect x="'+(x-72)+'" y="'+(y-23)+'" width="144" height="46" rx="9" fill="'+(on?'#18332e':skipped?'#f0f1ed':'#fff')+'" stroke="'+(on?'#86cc76':skipped?'#d9ddd4':'#9db7a5')+'" stroke-width="'+(on?3:1)+'"/><text x="'+x+'" y="'+(y-3)+'" text-anchor="middle" font-size="10" font-weight="600" fill="'+(on?'#fff':skipped?'#9da89f':'#18332e')+'">'+liveLabels[i]+'</text><text x="'+x+'" y="'+(y+12)+'" text-anchor="middle" font-size="8" fill="'+(on?'#c7e7b8':'#728578')+'">'+(skipped?'skipped on this path':liveConcepts[i])+'</text></g>';
+ });
+ if(lastTransfer){
+ const [a,b]=lastTransfer;
+ svg+='<circle r="6" fill="#e5ab4c" stroke="#fff" stroke-width="2"><animateMotion dur="'+(Number($('speed').value)*.65)+'ms" repeatCount="1" fill="freeze" path="'+flowPath(a,b)+'"/></circle>';
+ }
+ svg+='</svg>';$('liveCanvas').innerHTML=svg;
+ $('liveCanvas').querySelectorAll('[data-live-stage]').forEach(n=>{const inspectNode=()=>{stop();stage=Number(n.dataset.liveStage);render();};n.onclick=inspectNode;n.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();inspectNode();}};});
+ $('liveTitle').textContent=liveLabels[active];
+ $('liveNarration').textContent=liveNarration(active);
+ $('livePacket').textContent=pretty(liveStagePayload(active));
+ $('conceptNow').textContent='Ontology: '+liveConcepts[active];
+ $('progressText').textContent='Day '+(day+1)+' / '+rows.length+' · stage '+(replayPhase+1)+' / '+r.length;
+ $('executionLog').innerHTML=replayEvents.slice(-10).reverse().map(e=>'<li><span>'+esc(e.date)+'</span> '+esc(e.label)+'</li>').join('');
+ const progress=(replayPhase+1)/r.length*100;$('flowProgress').style.width=progress+'%';
+}
+function resetReplay(){stop();replayPhase=0;stage=0;replayEvents=[];lastTransfer=null;render();}
+function advanceReplay(){
+ const oldStage=stage, oldDay=day;
+ const next=FlowPlayback.next(rows,{day,phase:replayPhase,done:false});
+ if(next.done){stop();$('status').textContent='Full replay complete. No real scan, diagnosis or notification was performed.';return;}
+ day=next.day;replayPhase=next.phase;stage=FlowPlayback.route(rows[day])[replayPhase];
+ lastTransfer=oldDay===day?[oldStage,stage]:null;
+ replayEvents.push({date:rows[day].captured_at.slice(0,10),label:liveLabels[stage]+(stage===4?' → '+rows[day].snapshot_id:'')});
+ render();
+}
+$('play').onclick=()=>{
+ if(timer){stop();return;}
+ const route=FlowPlayback.route(rows[day]);if(replayPhase>=route.length-1&&day===rows.length-1){day=0;resetReplay();}
+ stage=FlowPlayback.route(rows[day])[replayPhase];
+ if(!replayEvents.length)replayEvents.push({date:rows[day].captured_at.slice(0,10),label:liveLabels[stage]});
+ $('play').textContent='Ⅱ Pause pipeline';render();
+ timer=setInterval(advanceReplay,Number($('speed').value));
+};
+$('step').onclick=()=>{stop();advanceReplay();};
+$('reset').onclick=resetReplay;
+$('speed').onchange=()=>{if(timer){stop();$('play').click();}};
+
 fetch('data.json').then(r=>{if(!r.ok)throw Error('Dataset unavailable');return r.json();}).then(initialise).catch(e=>$('status').textContent='Loading failed: '+e.message);
+

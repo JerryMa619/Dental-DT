@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-10-12 — Full-process animation
+
+- Replace day-only playback with sequential full-pipeline replay, moving packets and stage-synchronized ontology/data inspection.
+- Add accepted/rejected paths, explicit disconnected dentist handoff and next-day loop.
+- Add step/reset/speed controls and event trace.
+- Pass 30-user replay-state and DOM-contract smoke checks; visual browser QA unavailable.
+
 ## 2026-10-12 — Benchmark and interactive explorer
 
 - Add 12 manually authored requirement scenarios; 11 pass and persistent-pain gap remains explicit.
