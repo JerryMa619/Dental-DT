@@ -1,0 +1,43 @@
+@prefix ddt: <https://w3id.org/dental-dt/ontology#> .
+@prefix ex: <https://example.org/ddt/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+ddt:ObservationShape a sh:NodeShape ; sh:targetClass ddt:Observation ;
+ sh:property [ sh:path sosa:madeBySensor ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ddt:Sensor ] ;
+ sh:property [ sh:path sosa:hasFeatureOfInterest ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ddt:AnatomicalStructure ] ;
+ sh:property [ sh:path sosa:observedProperty ; sh:minCount 1 ; sh:maxCount 1 ] ;
+ sh:property [ sh:path sosa:hasResult ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ddt:MeasurementResult ] ;
+ sh:property [ sh:path sosa:phenomenonTime ; sh:minCount 1 ] ;
+ sh:property [ sh:path sosa:resultTime ; sh:minCount 1 ; sh:datatype xsd:dateTime ] ;
+ sh:property [ sh:path ddt:inSession ; sh:minCount 1 ; sh:class ddt:ScanSession ] .
+ddt:PatientShape a sh:NodeShape ; sh:targetClass ddt:Patient ;
+ sh:property [ sh:path ddt:patientId ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] .
+ddt:ScanShape a sh:NodeShape ; sh:targetClass ddt:ScanSession ;
+ sh:property [ sh:path ddt:forPatient ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ddt:Patient ] ;
+ sh:property [ sh:path ddt:usesDevice ; sh:minCount 1 ; sh:class ddt:DentalDevice ] ;
+ sh:property [ sh:path ddt:hasQualityAssessment ; sh:minCount 1 ; sh:class ddt:QualityAssessment ] .
+ddt:QualityShape a sh:NodeShape ; sh:targetClass ddt:QualityAssessment ;
+ sh:property [ sh:path ddt:qualityStatus ; sh:minCount 1 ; sh:in ("accepted" "rejected" "needs-review") ] ;
+ sh:property [ sh:path ddt:coverageFraction ; sh:datatype xsd:decimal ; sh:minInclusive 0 ; sh:maxInclusive 1 ] .
+ddt:FindingShape a sh:NodeShape ; sh:targetClass ddt:Finding ;
+ sh:property [ sh:path ddt:aboutStructure ; sh:minCount 1 ; sh:class ddt:AnatomicalStructure ] ;
+ sh:property [ sh:path ddt:hasEvidence ; sh:minCount 1 ] .
+ddt:AssessmentShape a sh:NodeShape ; sh:targetClass ddt:ClinicalAssessment ;
+ sh:property [ sh:path ddt:assessesSnapshot ; sh:minCount 1 ; sh:class ddt:TwinSnapshot ] ;
+ sh:property [ sh:path ddt:hasEvidence ; sh:minCount 1 ] ;
+ sh:property [ sh:path ddt:reviewStatus ; sh:minCount 1 ; sh:in ("unreviewed" "reviewed" "rejected") ] .
+ddt:RecommendationShape a sh:NodeShape ; sh:targetClass ddt:Recommendation ;
+ sh:property [ sh:path ddt:basedOnAssessment ; sh:minCount 1 ; sh:class ddt:ClinicalAssessment ] ;
+ sh:property [ sh:path ddt:proposesAction ; sh:minCount 1 ; sh:class ddt:ActionConcept ] ;
+ sh:property [ sh:path ddt:reviewStatus ; sh:minCount 1 ; sh:in ("unreviewed" "reviewed" "rejected") ] .
+ddt:DiagnosisShape a sh:NodeShape ; sh:targetClass ddt:ClinicianDiagnosis ;
+ sh:property [ sh:path ddt:reviewedBy ; sh:minCount 1 ; sh:class ddt:Personnel ] .
+ddt:SnapshotShape a sh:NodeShape ; sh:targetClass ddt:TwinSnapshot ;
+ sh:property [ sh:path prov:wasDerivedFrom ; sh:minCount 1 ] ;
+ sh:property [ sh:path ddt:version ; sh:minCount 1 ; sh:datatype xsd:string ] ;
+ sh:property [ sh:path ddt:capturedAt ; sh:minCount 1 ; sh:datatype xsd:dateTime ] .

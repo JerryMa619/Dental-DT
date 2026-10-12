@@ -1,0 +1,97 @@
+@prefix ddt: <https://w3id.org/dental-dt/ontology#> .
+@prefix ex: <https://example.org/ddt/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+<https://w3id.org/dental-dt/ontology> a owl:Ontology ;
+ owl:versionInfo "0.1.0" ;
+ rdfs:comment "Draft DDT vocabulary. Namespace proposed, not registered. Clinical extension to ISO 23247, not a standard ontology or validated diagnostic system."@en .
+ddt:FrameworkEntity a owl:Class ; rdfs:label "FrameworkEntity"@en .
+ddt:OME a owl:Class ; rdfs:label "OME"@en .
+ddt:DCDCE a owl:Class ; rdfs:label "DCDCE"@en ; rdfs:subClassOf ddt:FrameworkEntity .
+ddt:CoreEntity a owl:Class ; rdfs:label "CoreEntity"@en ; rdfs:subClassOf ddt:FrameworkEntity .
+ddt:UserEntity a owl:Class ; rdfs:label "UserEntity"@en ; rdfs:subClassOf ddt:FrameworkEntity .
+ddt:CrossSystemEntity a owl:Class ; rdfs:label "CrossSystemEntity"@en ; rdfs:subClassOf ddt:FrameworkEntity .
+ddt:Personnel a owl:Class ; rdfs:label "Personnel"@en ; rdfs:subClassOf ddt:OME .
+ddt:Equipment a owl:Class ; rdfs:label "Equipment"@en ; rdfs:subClassOf ddt:OME .
+ddt:Material a owl:Class ; rdfs:label "Material"@en ; rdfs:subClassOf ddt:OME .
+ddt:Process a owl:Class ; rdfs:label "Process"@en ; rdfs:subClassOf ddt:OME .
+ddt:Facility a owl:Class ; rdfs:label "Facility"@en ; rdfs:subClassOf ddt:OME .
+ddt:Environment a owl:Class ; rdfs:label "Environment"@en ; rdfs:subClassOf ddt:OME .
+ddt:Product a owl:Class ; rdfs:label "Product"@en ; rdfs:subClassOf ddt:OME .
+ddt:SupportingDocument a owl:Class ; rdfs:label "SupportingDocument"@en ; rdfs:subClassOf ddt:OME .
+ddt:Patient a owl:Class ; rdfs:label "Patient"@en .
+ddt:AnatomicalStructure a owl:Class ; rdfs:label "AnatomicalStructure"@en ; rdfs:subClassOf sosa:FeatureOfInterest .
+ddt:OralCavity a owl:Class ; rdfs:label "OralCavity"@en ; rdfs:subClassOf ddt:AnatomicalStructure .
+ddt:Tooth a owl:Class ; rdfs:label "Tooth"@en ; rdfs:subClassOf ddt:AnatomicalStructure .
+ddt:ToothSurface a owl:Class ; rdfs:label "ToothSurface"@en ; rdfs:subClassOf ddt:AnatomicalStructure .
+ddt:GingivalRegion a owl:Class ; rdfs:label "GingivalRegion"@en ; rdfs:subClassOf ddt:AnatomicalStructure .
+ddt:DentalDevice a owl:Class ; rdfs:label "DentalDevice"@en ; rdfs:subClassOf ddt:Equipment .
+ddt:Sensor a owl:Class ; rdfs:label "Sensor"@en ; rdfs:subClassOf sosa:Sensor .
+ddt:ScanSession a owl:Class ; rdfs:label "ScanSession"@en ; rdfs:subClassOf prov:Activity .
+ddt:Observation a owl:Class ; rdfs:label "Observation"@en ; rdfs:subClassOf sosa:Observation .
+ddt:MeasurementResult a owl:Class ; rdfs:label "MeasurementResult"@en ; rdfs:subClassOf sosa:Result .
+ddt:DataArtifact a owl:Class ; rdfs:label "DataArtifact"@en ; rdfs:subClassOf prov:Entity .
+ddt:QualityAssessment a owl:Class ; rdfs:label "QualityAssessment"@en ; rdfs:subClassOf prov:Entity .
+ddt:DigitalTwin a owl:Class ; rdfs:label "DigitalTwin"@en ; rdfs:subClassOf prov:Entity .
+ddt:TwinSnapshot a owl:Class ; rdfs:label "TwinSnapshot"@en ; rdfs:subClassOf prov:Entity .
+ddt:AnalysisRun a owl:Class ; rdfs:label "AnalysisRun"@en ; rdfs:subClassOf prov:Activity .
+ddt:ModelVersion a owl:Class ; rdfs:label "ModelVersion"@en ; rdfs:subClassOf prov:Entity .
+ddt:Finding a owl:Class ; rdfs:label "Finding"@en ; rdfs:subClassOf prov:Entity .
+ddt:ClinicalAssessment a owl:Class ; rdfs:label "ClinicalAssessment"@en ; rdfs:subClassOf prov:Entity .
+ddt:ClinicianDiagnosis a owl:Class ; rdfs:label "ClinicianDiagnosis"@en ; rdfs:subClassOf ddt:ClinicalAssessment .
+ddt:Recommendation a owl:Class ; rdfs:label "Recommendation"@en ; rdfs:subClassOf prov:Entity .
+ddt:TreatmentPlan a owl:Class ; rdfs:label "TreatmentPlan"@en ; rdfs:subClassOf prov:Entity .
+ddt:Intervention a owl:Class ; rdfs:label "Intervention"@en ; rdfs:subClassOf prov:Activity .
+ddt:ConditionConcept a owl:Class ; rdfs:label "ConditionConcept"@en .
+ddt:ActionConcept a owl:Class ; rdfs:label "ActionConcept"@en .
+ddt:Finding owl:disjointWith ddt:ClinicianDiagnosis .
+ddt:Recommendation owl:disjointWith ddt:TreatmentPlan .
+ddt:hasOralCavity a owl:ObjectProperty; rdfs:domain ddt:Patient; rdfs:range ddt:OralCavity .
+ddt:belongsToPatient a owl:ObjectProperty; rdfs:domain ddt:AnatomicalStructure; rdfs:range ddt:Patient .
+ddt:partOf a owl:ObjectProperty; rdfs:domain ddt:AnatomicalStructure; rdfs:range ddt:AnatomicalStructure .
+ddt:hasSensor a owl:ObjectProperty; rdfs:domain ddt:DentalDevice; rdfs:range ddt:Sensor .
+ddt:forPatient a owl:ObjectProperty; rdfs:domain ddt:ScanSession; rdfs:range ddt:Patient .
+ddt:usesDevice a owl:ObjectProperty; rdfs:domain ddt:ScanSession; rdfs:range ddt:DentalDevice .
+ddt:inSession a owl:ObjectProperty; rdfs:domain ddt:Observation; rdfs:range ddt:ScanSession .
+ddt:hasArtifact a owl:ObjectProperty; rdfs:domain ddt:MeasurementResult; rdfs:range ddt:DataArtifact .
+ddt:hasQualityAssessment a owl:ObjectProperty; rdfs:domain ddt:ScanSession; rdfs:range ddt:QualityAssessment .
+ddt:representsPatient a owl:ObjectProperty; rdfs:domain ddt:DigitalTwin; rdfs:range ddt:Patient .
+ddt:hasSnapshot a owl:ObjectProperty; rdfs:domain ddt:DigitalTwin; rdfs:range ddt:TwinSnapshot .
+ddt:previousSnapshot a owl:ObjectProperty; rdfs:domain ddt:TwinSnapshot; rdfs:range ddt:TwinSnapshot .
+ddt:usesModel a owl:ObjectProperty; rdfs:domain ddt:AnalysisRun; rdfs:range ddt:ModelVersion .
+ddt:aboutStructure a owl:ObjectProperty; rdfs:domain ddt:Finding; rdfs:range ddt:AnatomicalStructure .
+ddt:suggestsCondition a owl:ObjectProperty; rdfs:domain ddt:Finding; rdfs:range ddt:ConditionConcept .
+ddt:hasFinding a owl:ObjectProperty; rdfs:domain ddt:TwinSnapshot; rdfs:range ddt:Finding .
+ddt:hasEvidence a owl:ObjectProperty .
+ddt:assessesSnapshot a owl:ObjectProperty; rdfs:domain ddt:ClinicalAssessment; rdfs:range ddt:TwinSnapshot .
+ddt:basedOnAssessment a owl:ObjectProperty; rdfs:domain ddt:Recommendation; rdfs:range ddt:ClinicalAssessment .
+ddt:proposesAction a owl:ObjectProperty; rdfs:domain ddt:Recommendation; rdfs:range ddt:ActionConcept .
+ddt:reviewedBy a owl:ObjectProperty; rdfs:range ddt:Personnel .
+ddt:implementsPlan a owl:ObjectProperty; rdfs:domain ddt:Intervention; rdfs:range ddt:TreatmentPlan .
+ddt:patientId a owl:DatatypeProperty ; rdfs:range xsd:string .
+ddt:toothCode a owl:DatatypeProperty ; rdfs:range xsd:string .
+ddt:toothNumberingSystem a owl:DatatypeProperty ; rdfs:range xsd:string .
+ddt:surfaceName a owl:DatatypeProperty ; rdfs:range xsd:string .
+ddt:capturedAt a owl:DatatypeProperty ; rdfs:range xsd:dateTime .
+ddt:numericValue a owl:DatatypeProperty ; rdfs:range xsd:decimal .
+ddt:unitCode a owl:DatatypeProperty ; rdfs:range xsd:string .
+ddt:artifactURI a owl:DatatypeProperty ; rdfs:range xsd:anyURI .
+ddt:mediaType a owl:DatatypeProperty ; rdfs:range xsd:string .
+ddt:checksum a owl:DatatypeProperty ; rdfs:range xsd:string .
+ddt:qualityStatus a owl:DatatypeProperty ; rdfs:range xsd:string .
+ddt:coverageFraction a owl:DatatypeProperty ; rdfs:range xsd:decimal .
+ddt:version a owl:DatatypeProperty ; rdfs:range xsd:string .
+ddt:reviewStatus a owl:DatatypeProperty ; rdfs:range xsd:string .
+ddt:rationale a owl:DatatypeProperty ; rdfs:range xsd:string .
+ddt:calibrationVersion a owl:DatatypeProperty ; rdfs:range xsd:string .
+ddt:Caries a ddt:ConditionConcept ; rdfs:label "Dental caries"@en .
+ddt:PeriodontalDisease a ddt:ConditionConcept ; rdfs:label "Periodontal disease"@en .
+ddt:RepeatScan a ddt:ActionConcept .
+ddt:ClinicalReview a ddt:ActionConcept .
+ddt:SurfaceGeometry a sosa:ObservableProperty .
+ddt:OpticalSignal a sosa:ObservableProperty .

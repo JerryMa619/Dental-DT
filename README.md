@@ -4,10 +4,11 @@ Dental digital twin research based on ISO 23247 architecture mapping and dental 
 
 ## Current stage
 
-Framework definition and preliminary sensor landscape research. Start with the entity view: OME, DCDCE, CE, UE and CSE, then refine dental mappings and ontology.
+Draft DT architecture and executable ontology v0.1, alongside preliminary sensor landscape research. Start with the entity view: OME, DCDCE, CE, UE and CSE, then refine dental mappings and ontology.
 
 ## Documentation
 
+- [DT architecture v0.1](docs/ddt-architecture-v0.1.md)
 - [ISO 23247 framework](docs/iso23247-framework.md)
 - [Dental sensors and condition mapping](research/dental-sensors-landscape.md)
 - [Search log: 12 October 2026](research/search-log-2026-10-12.md)

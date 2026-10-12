@@ -1,0 +1,23 @@
+# Run each query separately. DDT namespace is proposed, not registered.
+PREFIX ddt: <https://w3id.org/dental-dt/ontology#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+SELECT ?observation ?site ?sensor ?time WHERE {
+ ?observation a ddt:Observation ; sosa:hasFeatureOfInterest ?site ;
+ sosa:madeBySensor ?sensor ; sosa:resultTime ?time .
+}
+
+# Finding provenance
+PREFIX ddt: <https://w3id.org/dental-dt/ontology#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?finding ?evidence ?model WHERE {
+ ?finding a ddt:Finding ; ddt:hasEvidence ?evidence ; prov:wasGeneratedBy ?run .
+ ?run ddt:usesModel ?model .
+}
+
+# Recommendation evidence chain
+PREFIX ddt: <https://w3id.org/dental-dt/ontology#>
+SELECT ?recommendation ?action ?snapshot ?status WHERE {
+ ?recommendation a ddt:Recommendation ; ddt:proposesAction ?action ;
+ ddt:basedOnAssessment ?assessment ; ddt:reviewStatus ?status .
+ ?assessment ddt:assessesSnapshot ?snapshot .
+}

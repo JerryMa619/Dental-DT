@@ -4,32 +4,27 @@ Updated: 2026-10-12.
 
 ## Completed
 
-- [x] Create private Dental-DT repository.
-- [x] Record ISO 23247 and ontology project direction.
-- [x] Outline five major entities and eight OME categories.
-- [x] Save draft dental mappings and clinical extension questions.
-- [x] Translate all maintained repository documents into English.
-- [x] Conduct preliminary sensor search: 15 categories and 27 selected source records.
-- [x] Save sensor-to-condition mapping, evidence limits, search queries and access limitations.
-
-- [x] Record portable professional scanners, home photographic monitoring and self-scan design opportunities.
+- [x] Create private repository and switch maintained documentation to English.
+- [x] Outline ISO 23247 five entities and eight OME categories.
+- [x] Save 15 sensor categories, 27 selected sources and search log.
+- [x] Explore portable/home scanner design and existing product examples.
+- [x] Create draft multimodal DT architecture v0.1.
+- [x] Create OWL/RDFS ontology, SHACL shapes and synthetic scan example.
+- [x] Validate parsing, positive conformance, three negative constraints and three evidence queries.
 
 ## In progress
 
-- [ ] Define dental objects and properties, starting with OME.
+- [ ] Select initial clinical use case and observation requirements.
+- [ ] Refine tooth/site codes, geometry, calibration and uncertainty semantics.
 
 ## Pending
 
-- [ ] Choose clinical/manufacturing use case.
-- [ ] Check final ISO 23247 terminology and requirements against formal documents.
-- [ ] Resolve Patient and Anatomical structure extensions.
-- [ ] Expand DCDCE, CE, UE and CSE.
-- [ ] Design and validate ontology.
-- [ ] Implement acquisition, state updates and minimum prototype.
-- [ ] Appraise full-text sensor evidence and check device access, calibration and relevant UK status.
+- [ ] Check formal ISO requirements and clinical terminology mappings.
+- [ ] Design device optics and prove self-scan coverage/repeatability.
+- [ ] Implement acquisition, reconstruction, registration and twin storage.
+- [ ] Develop and clinically validate disease-specific assessments.
+- [ ] Check full-text sensor evidence, device interfaces and relevant UK status.
 
 ## Saving convention
 
-During project work sessions, commit substantial completed stages with documentation, progress and change-log updates. Mark unconfirmed suggestions as drafts. Report save failures explicitly. No background monitoring or scheduled save automation is configured.
-
-Repository working language: English. Historical commits are retained.
+Use English. Commit substantial project stages with progress and change-log updates. Label proposals as drafts; report failed saves. No scheduled background saving is configured.

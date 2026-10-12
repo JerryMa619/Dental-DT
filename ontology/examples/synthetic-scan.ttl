@@ -1,0 +1,45 @@
+@prefix ddt: <https://w3id.org/dental-dt/ontology#> .
+@prefix ex: <https://example.org/ddt/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+# Entirely synthetic: this does not represent a patient or diagnostic result.
+ex:patient-demo a ddt:Patient ; ddt:patientId "SYNTHETIC-001" ; ddt:hasOralCavity ex:mouth .
+ex:mouth a ddt:OralCavity ; ddt:belongsToPatient ex:patient-demo .
+ex:tooth46 a ddt:Tooth ; ddt:partOf ex:mouth ; ddt:belongsToPatient ex:patient-demo ;
+ ddt:toothCode "46" ; ddt:toothNumberingSystem "FDI" .
+ex:occlusal46 a ddt:ToothSurface ; ddt:partOf ex:tooth46 ; ddt:belongsToPatient ex:patient-demo ;
+ ddt:surfaceName "occlusal" .
+ex:device a ddt:DentalDevice ; ddt:hasSensor ex:opticalSensor ; ddt:calibrationVersion "demo-calibration-1" .
+ex:opticalSensor a ddt:Sensor .
+ex:session a ddt:ScanSession ; ddt:forPatient ex:patient-demo ; ddt:usesDevice ex:device ;
+ ddt:capturedAt "2026-10-12T19:00:00Z"^^xsd:dateTime ; ddt:hasQualityAssessment ex:quality .
+ex:quality a ddt:QualityAssessment ; ddt:qualityStatus "needs-review" ;
+ ddt:coverageFraction "0.75"^^xsd:decimal .
+ex:time a time:Instant ; time:inXSDDateTime "2026-10-12T19:00:00Z"^^xsd:dateTime .
+ex:observation a ddt:Observation ; ddt:inSession ex:session ;
+ sosa:madeBySensor ex:opticalSensor ; sosa:hasFeatureOfInterest ex:occlusal46 ;
+ sosa:observedProperty ddt:OpticalSignal ; sosa:hasResult ex:result ;
+ sosa:phenomenonTime ex:time ; sosa:resultTime "2026-10-12T19:00:01Z"^^xsd:dateTime .
+ex:result a ddt:MeasurementResult ; ddt:hasArtifact ex:image .
+ex:image a ddt:DataArtifact ; ddt:artifactURI "https://example.org/synthetic-image.png"^^xsd:anyURI ;
+ ddt:mediaType "image/png" .
+ex:twin a ddt:DigitalTwin ; ddt:representsPatient ex:patient-demo ; ddt:hasSnapshot ex:snapshot .
+ex:model a ddt:ModelVersion ; ddt:version "synthetic-model-0" .
+ex:analysis a ddt:AnalysisRun ; ddt:usesModel ex:model ; prov:used ex:observation .
+ex:syntheticFinding a ddt:Finding ; ddt:aboutStructure ex:occlusal46 ;
+ ddt:hasEvidence ex:observation ; prov:wasGeneratedBy ex:analysis ;
+ ddt:rationale "Synthetic suspicious optical feature; no diagnosis." .
+ex:snapshot a ddt:TwinSnapshot ; prov:wasDerivedFrom ex:observation ;
+ ddt:capturedAt "2026-10-12T19:00:02Z"^^xsd:dateTime ; ddt:version "demo-1" ;
+ ddt:hasFinding ex:syntheticFinding .
+ex:assessment a ddt:ClinicalAssessment ; ddt:assessesSnapshot ex:snapshot ;
+ ddt:hasEvidence ex:syntheticFinding ; ddt:reviewStatus "unreviewed" ;
+ ddt:rationale "Synthetic example: acquisition quality requires review." .
+ex:recommendation a ddt:Recommendation ; ddt:basedOnAssessment ex:assessment ;
+ ddt:proposesAction ddt:RepeatScan ; ddt:reviewStatus "unreviewed" ;
+ ddt:rationale "Repeat incomplete acquisition; this is not a treatment plan." .

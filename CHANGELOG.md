@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-10-12 — DT and ontology v0.1
+
+- Add multimodal acquisition, quality gate, versioned twin state, assessment and review architecture.
+- Add OWL/RDFS vocabulary, SHACL constraints, synthetic data, SPARQL queries and reproducible validation script.
+- Pass Turtle parsing, synthetic SHACL conformance, three negative constraints and three competency queries.
+- Clinical diagnosis capability is not implemented or validated.
+
 ## 2026-10-12 — Portable/home scanner exploration
 
 - Add official product examples, eight follow-up queries, design opportunities and validation criteria.
