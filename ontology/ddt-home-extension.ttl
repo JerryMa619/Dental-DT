@@ -1,0 +1,22 @@
+@prefix ddt: <https://w3id.org/dental-dt/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+<https://w3id.org/dental-dt/home-extension> a owl:Ontology ;
+ owl:versionInfo "0.1.0-draft" ; rdfs:comment "Load with ddt-core.ttl. Proposed namespace, no automatic imports." .
+ddt:SymptomReport a owl:Class ; rdfs:subClassOf prov:Entity .
+ddt:AdviceProtocol a owl:Class ; rdfs:subClassOf prov:Entity .
+ddt:ReviewCondition a owl:Class .
+ddt:FollowUpRecord a owl:Class ; rdfs:subClassOf prov:Entity .
+ddt:NotificationEvent a owl:Class ; rdfs:subClassOf prov:Activity .
+ddt:reportedByPatient a owl:ObjectProperty ; rdfs:domain ddt:SymptomReport ; rdfs:range ddt:Patient .
+ddt:usesAdviceProtocol a owl:ObjectProperty ; rdfs:domain ddt:Recommendation ; rdfs:range ddt:AdviceProtocol .
+ddt:hasReviewCondition a owl:ObjectProperty ; rdfs:domain ddt:Recommendation ; rdfs:range ddt:ReviewCondition .
+ddt:followsAssessment a owl:ObjectProperty ; rdfs:domain ddt:FollowUpRecord ; rdfs:range ddt:ClinicalAssessment .
+ddt:hasSymptomReport a owl:ObjectProperty ; rdfs:domain ddt:FollowUpRecord ; rdfs:range ddt:SymptomReport .
+ddt:reportsRecommendation a owl:ObjectProperty ; rdfs:domain ddt:NotificationEvent ; rdfs:range ddt:Recommendation .
+ddt:guidelineURI a owl:DatatypeProperty ; rdfs:range xsd:anyURI .
+ddt:reportedSymptom a owl:DatatypeProperty ; rdfs:range xsd:string .
+ddt:reportedDurationDays a owl:DatatypeProperty ; rdfs:range xsd:decimal .
+ddt:deliveryStatus a owl:DatatypeProperty ; rdfs:range xsd:string .

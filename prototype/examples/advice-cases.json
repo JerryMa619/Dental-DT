@@ -1,0 +1,78 @@
+[
+  {
+    "synthetic": true,
+    "patient_id": "SYNTHETIC-001",
+    "quality": "accepted",
+    "symptoms": {
+      "bleeding": false,
+      "swelling": false,
+      "breathing_or_swallowing_difficulty": false,
+      "ulcer_days": 0
+    },
+    "case_id": "deposit-demo",
+    "simulated_finding": "visible-deposit"
+  },
+  {
+    "synthetic": true,
+    "patient_id": "SYNTHETIC-001",
+    "quality": "accepted",
+    "symptoms": {
+      "bleeding": true,
+      "swelling": false,
+      "breathing_or_swallowing_difficulty": false,
+      "ulcer_days": 0
+    },
+    "case_id": "bleeding-demo",
+    "simulated_finding": "gingival-change"
+  },
+  {
+    "synthetic": true,
+    "patient_id": "SYNTHETIC-001",
+    "quality": "accepted",
+    "symptoms": {
+      "bleeding": false,
+      "swelling": false,
+      "breathing_or_swallowing_difficulty": false,
+      "ulcer_days": 0
+    },
+    "case_id": "follow-up-demo",
+    "simulated_finding": "none"
+  },
+  {
+    "synthetic": true,
+    "patient_id": "SYNTHETIC-001",
+    "quality": "rejected",
+    "symptoms": {
+      "bleeding": false,
+      "swelling": false,
+      "breathing_or_swallowing_difficulty": false,
+      "ulcer_days": 0
+    },
+    "case_id": "bad-scan-demo",
+    "simulated_finding": "visible-deposit"
+  },
+  {
+    "synthetic": true,
+    "patient_id": "SYNTHETIC-001",
+    "quality": "rejected",
+    "symptoms": {
+      "bleeding": false,
+      "swelling": true,
+      "breathing_or_swallowing_difficulty": true,
+      "ulcer_days": 0
+    },
+    "case_id": "emergency-demo"
+  },
+  {
+    "synthetic": true,
+    "patient_id": "SYNTHETIC-001",
+    "quality": "accepted",
+    "symptoms": {
+      "bleeding": false,
+      "swelling": false,
+      "breathing_or_swallowing_difficulty": false,
+      "ulcer_days": 22
+    },
+    "case_id": "persistent-ulcer-demo"
+  }
+]

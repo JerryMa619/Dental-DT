@@ -14,6 +14,8 @@ Draft DT architecture and executable ontology v0.1, alongside preliminary sensor
 
 A synthetic acquisition-to-twin data pipeline is available. See [prototype instructions](prototype/README.md). It does not perform clinical detection.
 
+A separate [synthetic advice and follow-up demonstration](prototype/ADVICE.md) covers supplied mild-problem findings and selected escalation conditions. Its rules are drafts, not clinical validation.
+
 ## Documentation
 
 - [Acquisition specification and feasibility plan](docs/acquisition-specification-v0.1.md)

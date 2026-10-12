@@ -19,9 +19,13 @@ Updated: 2026-10-12.
 - [x] Implement synthetic session-to-region-quality-to-twin pipeline and repeat-scan records.
 - [x] Pass five data-flow tests and two sequential CLI demo runs.
 
+- [x] Add six synthetic advice scenarios, guideline-linked rules and reported-symptom follow-up.
+- [x] Add home ontology extension; parse 38 triples.
+- [x] Pass seven advice tests and five existing pipeline tests (12 total).
+
 ## In progress
 
-- [ ] Select initial clinical use case and observation requirements.
+- [ ] Integrate symptom/advice records with scan snapshots and RDF export; add extension SHACL constraints.
 - [ ] Refine tooth/site codes, geometry, calibration and uncertainty semantics.
 
 ## Pending

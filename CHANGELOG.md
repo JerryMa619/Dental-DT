@@ -1,5 +1,12 @@
 # Change Log
 
+## 2026-10-12 — Synthetic advice and follow-up
+
+- Add six synthetic scenarios, evidence-linked draft advice and symptom follow-up.
+- Add home ontology extension with symptom, protocol, review, follow-up and notification concepts.
+- Pass 12 combined tests and extension syntax parsing.
+- Advice module remains separate from persistence; no actual detections or messages.
+
 ## 2026-10-12 — Executable synthetic pipeline
 
 - Implement region-based acceptance, immutable state snapshots, provenance and repeat-scan actions.
