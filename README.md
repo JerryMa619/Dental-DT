@@ -2,6 +2,10 @@
 
 Dental digital twin research based on ISO 23247 architecture mapping and dental ontology.
 
+## Intended use
+
+Home detection and evidence-linked advice for selected mild oral-health problems, with professional review/escalation when needed. See [capability requirements](docs/home-capability-requirements-v0.1.md).
+
 ## Current stage
 
 Draft DT architecture and executable ontology v0.1, alongside preliminary sensor landscape research. Start with the entity view: OME, DCDCE, CE, UE and CSE, then refine dental mappings and ontology.

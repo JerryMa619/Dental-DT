@@ -1,5 +1,11 @@
 # Change Log
 
+## 2026-10-12 — Home detection and advice requirements
+
+- Record corrected purpose: detection and advice for selected mild problems, not triage alone.
+- Add six candidate capabilities, data needs, advice boundaries, validation references and priorities.
+- Record current NHS sources and executed queries; no detection algorithms or notifications implemented.
+
 ## 2026-10-12 — DT and ontology v0.1
 
 - Add multimodal acquisition, quality gate, versioned twin state, assessment and review architecture.

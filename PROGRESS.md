@@ -12,6 +12,8 @@ Updated: 2026-10-12.
 - [x] Create OWL/RDFS ontology, SHACL shapes and synthetic scan example.
 - [x] Validate parsing, positive conformance, three negative constraints and three evidence queries.
 
+- [x] Record user-confirmed home detection-and-advice purpose and six candidate capability requirements.
+
 ## In progress
 
 - [ ] Select initial clinical use case and observation requirements.
