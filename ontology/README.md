@@ -1,9 +1,9 @@
-# Ontology 规划
+# Ontology Plan
 
-当前未创建 OWL/RDF 本体文件。
+No OWL/RDF ontology has been implemented.
 
-先确定 OME 分类与临床扩展边界，再定义类、关系、属性和约束。
+First confirm OME categories and clinical extension boundaries, then define classes, relations, attributes and constraints.
 
-候选模块：解剖结构、观察与测量、临床状态、治疗与材料、孪生与模型。均为草案，后续按用例确认。
+Candidate modules: anatomy; observations and measurements; clinical state; treatment and materials; twin instances and models. These remain proposals to be selected by use case.
 
-首版应包含能力问题、实例数据及验证方法，并区分观测、诊断与预测。
+The first version should include competency questions, example instances and validation methods, with separate observations, diagnoses and predictions. The [sensor landscape](../research/dental-sensors-landscape.md) proposes observation fields and interpretation boundaries.

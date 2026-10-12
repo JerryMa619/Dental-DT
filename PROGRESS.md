@@ -1,29 +1,33 @@
-# 项目进度
+# Project Progress
 
-最后更新：2026-10-12。
+Updated: 2026-10-12.
 
-## 已完成
+## Completed
 
-- [x] 建立 Dental-DT 私有 GitHub 仓库。
-- [x] 保存基于 ISO 23247 与 Ontology 的项目方向。
-- [x] 梳理五个主要实体的初始名称与职责。
-- [x] 记录八类 OME 及牙科映射草案。
+- [x] Create private Dental-DT repository.
+- [x] Record ISO 23247 and ontology project direction.
+- [x] Outline five major entities and eight OME categories.
+- [x] Save draft dental mappings and clinical extension questions.
+- [x] Translate all maintained repository documents into English.
+- [x] Conduct preliminary sensor search: 15 categories and 27 selected source records.
+- [x] Save sensor-to-condition mapping, evidence limits, search queries and access limitations.
 
-## 正在推进
+## In progress
 
-- [ ] 从 OME 开始逐项定义牙科对象及属性。
+- [ ] Define dental objects and properties, starting with OME.
 
-## 待完成
+## Pending
 
-- [ ] 确定临床或制造用例范围。
-- [ ] 对照正式 ISO 23247 标准核查术语与要求。
-- [ ] 确定 Patient 与 Anatomical structure 的扩展方案。
-- [ ] 展开 DCDCE、CE、UE、CSE。
-- [ ] 设计和验证牙科 Ontology。
-- [ ] 实现数据接入、状态更新和最小验证原型。
+- [ ] Choose clinical/manufacturing use case.
+- [ ] Check final ISO 23247 terminology and requirements against formal documents.
+- [ ] Resolve Patient and Anatomical structure extensions.
+- [ ] Expand DCDCE, CE, UE and CSE.
+- [ ] Design and validate ontology.
+- [ ] Implement acquisition, state updates and minimum prototype.
+- [ ] Appraise full-text sensor evidence and check device access, calibration and relevant UK status.
 
-## 保存约定
+## Saving convention
 
-后续在本项目工作会话中，每完成一个有实质内容的阶段，更新相关文件、本进度与 CHANGELOG，并提交 Git commit。仅将讨论中的建议标记为草案，不自动视为已确认设计。保存失败时应明确报告，不把本地或拟定内容称为已提交。
+During project work sessions, commit substantial completed stages with documentation, progress and change-log updates. Mark unconfirmed suggestions as drafts. Report save failures explicitly. No background monitoring or scheduled save automation is configured.
 
-没有设置后台监测或定时自动保存任务。
+Repository working language: English. Historical commits are retained.

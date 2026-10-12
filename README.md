@@ -1,20 +1,24 @@
 # Dental DT (DDT)
 
-牙科数字孪生研究项目，基于 ISO 23247 的架构映射与牙科 Ontology。
+Dental digital twin research based on ISO 23247 architecture mapping and dental ontology.
 
-## 当前阶段
+## Current stage
 
-框架定义阶段。首先从实体视角梳理 OME、DCDCE、CE、UE、CSE，再定义牙科映射及本体。
+Framework definition and preliminary sensor landscape research. Start with the entity view: OME, DCDCE, CE, UE and CSE, then refine dental mappings and ontology.
 
-## 文档
+## Documentation
 
-- [ISO 23247 框架与牙科映射](docs/iso23247-framework.md)
-- [项目进度](PROGRESS.md)
-- [更新记录](CHANGELOG.md)
-- [本体规划](ontology/README.md)
+- [ISO 23247 framework](docs/iso23247-framework.md)
+- [Dental sensors and condition mapping](research/dental-sensors-landscape.md)
+- [Search log: 12 October 2026](research/search-log-2026-10-12.md)
+- [Progress](PROGRESS.md)
+- [Change log](CHANGELOG.md)
+- [Ontology plan](ontology/README.md)
 
-## 范围与状态
+## Scope and status
 
-ISO 23247 原始范围为制造业。本项目的临床映射属于研究设计，不宣称已符合标准。患者口腔、治疗过程及修复体制造的具体范围尚待确定。
+ISO 23247 is a manufacturing framework. Clinical mappings are research proposals, not a conformity claim. The clinical/manufacturing use case remains to be selected. No ontology, simulation or clinical application is implemented yet. Formal-standard checks, expert review and validation remain pending.
 
-当前没有已实现的本体、仿真或临床应用。标准原文逐条核查、领域专家审核与模型验证仍待完成。
+## Working language
+
+English for maintained repository documentation, research records and future code comments. Earlier Git commits retain the original Chinese drafts as history.
