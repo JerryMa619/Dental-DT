@@ -41,4 +41,4 @@ Updated: 2026-10-12.
 
 ## Saving convention
 
-Use English. Commit substantial project stages with progress and change-log updates. Label proposals as drafts; report failed saves. No scheduled background saving is configured.
+Use English. Commit substantial project stages with progress and change-log updates. Label proposals as drafts; report failed saves. Daily synthetic dataset updates are scheduled around 08:00 Europe/London; other work is saved during project sessions.

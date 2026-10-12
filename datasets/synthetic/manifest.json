@@ -19,5 +19,14 @@
   "train_users": 21,
   "validation_users": 4,
   "test_users": 5,
-  "last_updated_date": "2026-10-12"
+  "last_updated_date": "2026-10-12",
+  "daily_update": {
+    "enabled": true,
+    "mechanism": "ChatGPT scheduled automation",
+    "timezone": "Europe/London",
+    "approximate_local_time": "08:00",
+    "timing_mode": "flexible_schedule",
+    "start_date": "2026-10-13",
+    "schedule_file": "datasets/synthetic/SCHEDULE.md"
+  }
 }
