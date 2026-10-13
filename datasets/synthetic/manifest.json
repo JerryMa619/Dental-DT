@@ -10,16 +10,17 @@
     "2026-10-09",
     "2026-10-10",
     "2026-10-11",
-    "2026-10-12"
+    "2026-10-12",
+    "2026-10-13"
   ],
-  "total_records": 210,
+  "total_records": 240,
   "bootstrap_backfill": true,
   "timezone": "Europe/London",
   "simulated_capture_time": "08:00",
   "train_users": 21,
   "validation_users": 4,
   "test_users": 5,
-  "last_updated_date": "2026-10-12",
+  "last_updated_date": "2026-10-13",
   "daily_update": {
     "enabled": true,
     "mechanism": "ChatGPT scheduled automation",
