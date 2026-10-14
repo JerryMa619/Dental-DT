@@ -1,10 +1,10 @@
 {
   "synthetic": true,
   "users": 30,
-  "checkins": 240,
-  "snapshots": 192,
-  "no_snapshot_checkins": 48,
-  "recommendations": 321,
+  "checkins": 270,
+  "snapshots": 219,
+  "no_snapshot_checkins": 51,
+  "recommendations": 361,
   "integration_version": "0.2.0",
   "clinical_detection": false,
   "real_images": false

@@ -128,6 +128,28 @@
         "scope_note": "Quality status is synthetic input; no image analysis or healthy-mouth conclusion.",
         "snapshot_id": "snapshot-6"
       }
+    },
+    {
+      "session_id": "2026-10-14:SYN-000",
+      "captured_at": "2026-10-14T08:00:00+01:00",
+      "input_digest": "2af6df7621cf196642da2e68de3e3c7287a69e97f8d1fdaf55d015f42ff1305f",
+      "result": {
+        "session_id": "2026-10-14:SYN-000",
+        "synthetic": true,
+        "snapshot_created": false,
+        "actions": [
+          {
+            "action": "repeat-scan",
+            "tooth_code": "46",
+            "surface": "buccal",
+            "reason": "Synthetic acquisition rejected; signals unavailable.",
+            "evidence_session": "2026-10-14:SYN-000",
+            "review_status": "unreviewed"
+          }
+        ],
+        "clinical_assessment": "not-performed",
+        "scope_note": "Quality status is synthetic input; no image analysis or healthy-mouth conclusion."
+      }
     }
   ],
   "snapshots": [
@@ -835,8 +857,8 @@
         "id": "2026-10-13:SYN-000:symptoms",
         "values": {
           "bleeding": false,
-          "swelling": false,
           "breathing_or_swallowing_difficulty": false,
+          "swelling": false,
           "ulcer_days": 0
         }
       },
@@ -847,8 +869,8 @@
       "observation": {
         "id": "2026-10-13:SYN-000:observation",
         "site": {
-          "tooth_code": "46",
-          "surface": "buccal"
+          "surface": "buccal",
+          "tooth_code": "46"
         },
         "values": {
           "deposit_score": 0.2634,
@@ -881,8 +903,8 @@
             "2026-10-13:SYN-000:observation"
           ],
           "site": {
-            "tooth_code": "46",
-            "surface": "buccal"
+            "surface": "buccal",
+            "tooth_code": "46"
           }
         }
       ],
@@ -891,6 +913,79 @@
       "longitudinal_comparison": {
         "status": "insufficient-data",
         "previous_checkin_id": "2026-10-12:SYN-000",
+        "clinical_meaning": "not-established"
+      },
+      "adherence_feedback": [],
+      "adherence_status": "not-reported"
+    },
+    {
+      "checkin_id": "2026-10-14:SYN-000",
+      "synthetic": true,
+      "patient_id": "SYN-000",
+      "split": "train",
+      "captured_at": "2026-10-14T08:00:00+01:00",
+      "previous_checkin_id": "2026-10-13:SYN-000",
+      "session_id": "2026-10-14:SYN-000",
+      "snapshot_id": null,
+      "previous_snapshot_id": "SYN-000/snapshot-6",
+      "symptom_report": {
+        "id": "2026-10-14:SYN-000:symptoms",
+        "values": {
+          "bleeding": false,
+          "breathing_or_swallowing_difficulty": false,
+          "swelling": false,
+          "ulcer_days": 0
+        }
+      },
+      "quality_record": {
+        "id": "2026-10-14:SYN-000:quality",
+        "status": "rejected"
+      },
+      "observation": {
+        "id": "2026-10-14:SYN-000:observation",
+        "site": {
+          "surface": "buccal",
+          "tooth_code": "46"
+        },
+        "values": {
+          "deposit_score": null,
+          "redness_score": null
+        },
+        "available": false,
+        "origin": "procedural-simulation; no image artifact"
+      },
+      "assessment": {
+        "id": "2026-10-14:SYN-000:assessment",
+        "type": "synthetic-rule-evaluation",
+        "evidence_ids": [
+          "2026-10-14:SYN-000:symptoms",
+          "2026-10-14:SYN-000:quality"
+        ],
+        "diagnosis": "not-performed"
+      },
+      "recommendations": [
+        {
+          "rule_id": "Q01",
+          "text": "Repeat the affected scan region; do not infer health from missing data.",
+          "source": null,
+          "origin": "engineering rule",
+          "recommendation_id": "2026-10-14:SYN-000:recommendation:0",
+          "assessment_id": "2026-10-14:SYN-000:assessment",
+          "evidence_ids": [
+            "2026-10-14:SYN-000:symptoms",
+            "2026-10-14:SYN-000:quality"
+          ],
+          "site": {
+            "surface": "buccal",
+            "tooth_code": "46"
+          }
+        }
+      ],
+      "priority": "insufficient-data",
+      "notification": "not-sent",
+      "longitudinal_comparison": {
+        "status": "insufficient-data",
+        "previous_checkin_id": "2026-10-13:SYN-000",
         "clinical_meaning": "not-established"
       },
       "adherence_feedback": [],

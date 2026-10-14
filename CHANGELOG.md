@@ -1,5 +1,15 @@
 # Change Log
 
+## 2026-10-14 — Daily synthetic dataset update
+
+- Append 30 deterministic records for 2026-10-14; retain generator/schema 0.1.0, all 30 fictional users, stable 21/4/5 patient splits and previous-day IDs. No missed dates required backfill.
+- Verify all eight existing raw shards against pinned main blob hashes and deterministic regeneration; preserve their bytes. No conflicts were found.
+- Rebuild longitudinal integration over nine daily shards: 270 check-ins, 219 snapshots, 51 no-snapshot check-ins and 361 draft recommendations. Refresh the manifest, integrated summary and SYN-000 example.
+- Preserve zero supplied adherence reports: all 270 check-ins remain not-reported. Verify unique record/snapshot/recommendation IDs, evidence references, temporal and patient links, quality masking, longitudinal comparisons and unchanged historical integrated records.
+- Pass all 24 Python unit tests, both JavaScript test scripts (30 patient replays, 2,868 advances, and DOM-contract smoke checks), and both JavaScript syntax checks. The requirement benchmark remains 11/12; the existing persistent-toothache requirement still fails.
+- RDF/SHACL validation and the RDF-based exporter could not be rerun: RDFLib/PySHACL are absent, and installing the pinned requirements failed with no matching RDFLib distribution available to the installer. Reuse unchanged cached ontology class names only in an ignored local test payload with current check-ins. No hosted-site deployment was performed.
+- Structured simulation only: no real images/patients, diagnosis, clinical recovery or causality claims, or dentist notifications.
+
 ## 2026-10-13 — Daily synthetic dataset update
 
 - Append 30 deterministic records for 2026-10-13; retain generator/schema 0.1.0, the 30 fictional users, stable 21/4/5 patient splits and previous-day IDs.
