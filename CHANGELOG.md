@@ -1,5 +1,14 @@
 # Change Log
 
+## 2026-10-14 — English explorer and GitHub data synchronization
+
+- Translate scanning, entity-internal operations, feedback controls and dated audit into English; preserve the dark technology theme and quality/emergency branches.
+- Publish a tracked explorer payload: 270 checks, 219 snapshots, 361 draft recommendations and 44 declared ontology classes.
+- Add GitHub-first loading with a labelled bundled fallback, version/date display, manual refresh and five-minute refresh while the tab is visible. Active replay is not interrupted by automatic replacement.
+- Add the Pages build/deploy workflow and reusable append-only daily updater; update the existing scheduled automation to commit display data with each daily update.
+- Pass 26 Python tests and four JavaScript checks, including replay, 6,233 entity events, offline fallback and historical-shard preservation. Requirement benchmark remains 11/12.
+- The dependency-free class inventory is not RDF parsing or SHACL validation. Browser visual QA remains outside these script checks.
+
 ## 2026-10-14 — Daily synthetic dataset update
 
 - Append 30 deterministic records for 2026-10-14; retain generator/schema 0.1.0, all 30 fictional users, stable 21/4/5 patient splits and previous-day IDs. No missed dates required backfill.

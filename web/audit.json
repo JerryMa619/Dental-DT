@@ -1,0 +1,98 @@
+{
+  "date": "2026-10-13",
+  "presentation_updated": "2026-10-14",
+  "conclusion": "The structured simulation runs; clinical detection, feedback-driven decisions and dentist collaboration do not yet form a complete product loop.",
+  "scope": "Logic findings originate from the 13 October audit of 210 checks through 12 October. The English presentation and sync path were updated on 14 October. Current dataset totals are displayed separately above.",
+  "verification": [
+    "Original audit: 24 Python tests passed.",
+    "Original benchmark: 11 of 12 hand-authored requirements met; persistent toothache remains a gap.",
+    "Original audit checked 210 check-ins and 285 advice evidence references.",
+    "Replay regression covers quality failure, emergency bypass, conditional handoff, selected stages, tooth scope and ontology directions.",
+    "Formal RDF/SHACL validation and visual browser QA were not completed in that audit."
+  ],
+  "findings": [
+    {
+      "id": "L01",
+      "area": "Acquisition scope",
+      "status": "Presentation corrected",
+      "finding": "All simulated records cover tooth 46, buccal surface. Earlier animation lit the full dentition.",
+      "action": "Only the recorded tooth is highlighted. Other teeth are context; multi-surface acquisition remains future work."
+    },
+    {
+      "id": "L02",
+      "area": "Symptoms and emergency routing",
+      "status": "Presentation corrected; orchestration pending",
+      "finding": "The advice rule prioritizes warnings, but integration processes scanning before advice.",
+      "action": "Emergency replay bypasses scanning. Production needs an independent symptom intake and interruptible capture."
+    },
+    {
+      "id": "L03",
+      "area": "Rejected quality",
+      "status": "Existing logic verified",
+      "finding": "Rejected checks retain records and create no snapshot. Symptoms can still trigger professional review.",
+      "action": "Same-day replacement sessions, cancellation and timeout handling are not implemented."
+    },
+    {
+      "id": "L04",
+      "area": "Twin state and evidence",
+      "status": "References verified; state scope limited",
+      "finding": "Snapshots mainly store accepted-region provenance references. Recommendations link to symptoms, quality and accepted observations.",
+      "action": "This is not a reconstructed 3D mouth. Separate observation, symptom and geometry state with protocol versions."
+    },
+    {
+      "id": "L05",
+      "area": "Longitudinal comparison",
+      "status": "Partially implemented",
+      "finding": "Comparison uses the immediately preceding check. Unavailable observations block comparison.",
+      "action": "Add a last-valid same-site baseline and data age. Comparison is currently not an advice-rule input."
+    },
+    {
+      "id": "L06",
+      "area": "Advice and input contract",
+      "status": "Known gaps remain",
+      "finding": "Persistent toothache fails its benchmark. The prior audit also found NaN ulcer duration and inconsistent missing-quality handling.",
+      "action": "Unify finite values, quality enums and symptom contracts; fix rules without weakening benchmark expectations."
+    },
+    {
+      "id": "L07",
+      "area": "Advice feedback",
+      "status": "Recorded; decision loop pending",
+      "finding": "Feedback links to the immediately previous advice. Current daily data have no supplied reports. Rules do not read feedback.",
+      "action": "Support asynchronous feedback and due reviews. Self-reports and score changes do not establish causality or recovery."
+    },
+    {
+      "id": "L08",
+      "area": "Professional collaboration",
+      "status": "Presentation corrected; service unconnected",
+      "finding": "Dentist binding, consent, delivery, receipt and clinician writeback are absent.",
+      "action": "Show collaboration only when appropriate. Do not wait for notification before emergency action. No message is sent."
+    },
+    {
+      "id": "L09",
+      "area": "Ontology",
+      "status": "Directed relationships corrected; instances pending",
+      "finding": "JSON has not been exported to instance RDF. Some earlier graph predicates were reversed.",
+      "action": "Use formal subject-predicate-object directions. Add shapes for symptom-only assessments without a snapshot."
+    },
+    {
+      "id": "L10",
+      "area": "Animation and execution",
+      "status": "Presentation corrected",
+      "finding": "Replay stages illustrate dependencies; the backend is not instrumented as timed animation events.",
+      "action": "Label the trace as replay. Use actual backend events when available; skipped stages cannot enter a branch."
+    },
+    {
+      "id": "L11",
+      "area": "Daily data and display sync",
+      "status": "Refresh implemented; public access pending",
+      "finding": "The English page requests web/data.json from GitHub main, with a dated bundled fallback.",
+      "action": "Daily automation must commit the export with the shards. Enable public access and GitHub Pages, then verify remote loading and deployment."
+    }
+  ],
+  "next_steps": [
+    "Unify the input contract and symptom-first orchestration; fix known rule gaps.",
+    "Feed history and feedback into explicit rules; add same-day rescans and valid baselines.",
+    "Export ontology instances and drive replay from the same evidence/event model.",
+    "Verify public data publishing and Pages deployment; build clinician writeback separately."
+  ]
+}

@@ -2,4 +2,3 @@ __pycache__/
 *.py[cod]
 .venv/
 output/
-web/data.json

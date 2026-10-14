@@ -6,9 +6,13 @@ Dental digital twin research based on ISO 23247 architecture mapping and dental 
 
 Home detection and evidence-linked advice for selected mild oral-health problems, with professional review/escalation when needed. See [capability requirements](docs/home-capability-requirements-v0.1.md).
 
+## Interactive demonstration
+
+[Open the English DDT explorer on GitHub Pages](https://jerryma619.github.io/Dental-DT/). Play the scan pipeline to inspect acquisition, quality branches, DTE/UE/CSE exchanges, evidence, longitudinal comparison and advice. The animation is illustrative; all users and observations are synthetic.
+
 ## Current stage
 
-Draft DT architecture and executable ontology v0.1, alongside preliminary sensor landscape research. Start with the entity view: OME, DCDCE, CE, UE and CSE, then refine dental mappings and ontology.
+A runnable structured simulation connects daily checks, quality-gated snapshots, evidence-linked advice, longitudinal comparison and explicitly supplied feedback. Ontology vocabulary and draft constraints are maintained. Clinical detection, 3D reconstruction and feedback-driven decisions are not implemented.
 
 ## Runnable prototype
 
@@ -40,7 +44,7 @@ The [daily integration pipeline](prototype/INTEGRATION.md) connects synthetic ch
 
 ## Scope and status
 
-ISO 23247 is a manufacturing framework. Clinical mappings are research proposals, not a conformity claim. The clinical/manufacturing use case remains to be selected. No ontology, simulation or clinical application is implemented yet. Formal-standard checks, expert review and validation remain pending.
+ISO 23247 is a manufacturing framework. Clinical mappings are research proposals, not a conformity claim. The vocabulary and structured simulation are implemented; clinical functionality remains unvalidated. Formal-standard checks, expert review and clinical validation remain pending.
 
 ## Working language
 

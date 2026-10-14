@@ -4,8 +4,12 @@
   "audience": "owner-private",
   "source_commit": "0da5fb4515279bb952b260dd912e47cec6cb642e",
   "github_implementation_commit": "1b65f260b2a70a7afe8588ffe9c610a699555ffb",
-  "dataset_through": "2026-10-12",
-  "static_snapshot": true,
+  "dataset_through": "2026-10-14",
+  "static_snapshot": false,
   "automatic_site_redeployment": false,
-  "browser_qa_performed": false
+  "browser_qa_performed": false,
+  "github_data_sync": true,
+  "github_pages_url": "https://jerryma619.github.io/Dental-DT/",
+  "data_source": "https://raw.githubusercontent.com/JerryMa619/Dental-DT/main/web/data.json",
+  "refresh_interval_seconds": 300
 }

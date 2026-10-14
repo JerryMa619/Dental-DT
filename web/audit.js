@@ -1,0 +1,4 @@
+fetch('audit.json').then(r=>{if(!r.ok)throw Error('Audit unavailable');return r.json();}).then(a=>{
+ const safe=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ document.getElementById('auditContent').innerHTML='<article><h2>'+safe(a.conclusion)+'</h2><p class="sub">'+safe(a.scope)+'</p><ul>'+a.verification.map(t=>'<li>'+safe(t)+'</li>').join('')+'</ul></article><div class="table-wrap" style="margin-top:20px"><table><thead><tr><th>Stage</th><th>Status</th><th>Finding</th><th>Correction / next action</th></tr></thead><tbody>'+a.findings.map(f=>'<tr><td>'+safe(f.id)+' '+safe(f.area)+'</td><td>'+safe(f.status)+'</td><td>'+safe(f.finding)+'</td><td>'+safe(f.action)+'</td></tr>').join('')+'</tbody></table></div><article style="margin-top:20px"><h2>Next steps</h2><ol>'+a.next_steps.map(s=>'<li>'+safe(s)+'</li>').join('')+'</ol></article>';
+}).catch(e=>{document.getElementById('auditContent').textContent=e.message;});

@@ -1,21 +1,29 @@
-# Dental DT Full-Process Replay
+# English DDT Framework Explorer
 
-Animated English full-process replay using recorded synthetic data. Select a synthetic patient, replay dates, inspect nine data-flow stages, view five ISO-mapped entities and eight OME categories, explore ontology mappings and inspect the benchmark gap.
+Open the [GitHub Pages explorer](https://jerryma619.github.io/Dental-DT/) or the existing [private Sites mirror](https://dental-dt-framework.indigobud6.chatgpt.site).
 
-Build payload from repository root: `python -m scripts.export_explorer` (RDFLib required; see requirements.txt). Serve web/ with a static web server. Generated data.json is ignored because it is reproducible. Export-check-in downloads one synthetic JSON record. Load-updated-data accepts a local payload produced by the exporter; it does not upload data anywhere.
+The illustrative scan animation covers the recorded target tooth (46, buccal surface). Pipeline playback expands DCDCE acquisition, DTE/CE state and assessment, UE advice and feedback, and CSE exchange checks. No real scan, reconstructed mesh, production authentication or notification is performed.
 
-The hosted page is a static snapshot, not a live GitHub reader. Dataset automation updates GitHub, not this Site deployment. Refresh the hosted page by exporting current data and redeploying, or load an exported data.json locally. No GitHub credential is embedded in the page.
+## Data synchronization
 
-Framework is a project adaptation of ISO 23247, not its original diagram. Ontology visualization shows a selected conceptual relationship view; contextual lines are marked as context rather than claimed OWL properties. Clinical extensions, implementation gaps and synthetic status are explicit.
+The page first reads the public repository's `main/web/data.json`. It retries on focus and every five minutes while visible, and offers **Refresh data**. New data do not interrupt active replay. A failed initial request uses a labelled, dated bundled snapshot; later failures retain the loaded data and display an error. Imported local JSON is labelled separately.
 
-Verification: JavaScript syntax and payload integrity checked (210 checks, 30 users x 7 days, 44 OWL classes). Browser visual/interaction QA unavailable in this session; no browser test was performed. Benchmark: 11/12 requirements, one visible gap. Clinical validity untested.
+The existing London-morning automation runs `python -m scripts.update_daily`, verifies tests, and commits the raw shards, manifest, integrated outputs and tracked display export together. No future success is guaranteed; conflicts and failures must be reported. A push to main runs `.github/workflows/pages.yml`, which rebuilds and validates the data, then deploys `web/` through GitHub Pages. GitHub Pages must use **GitHub Actions** as its source.
 
-## Full-process animation update
+The Sites mirror uses the same public data endpoint, so daily data updates require no daily Sites redeployment. Changes to UI source still require a Sites publication.
 
-Play full pipeline advances stage-by-stage, then moves to the next recorded day. Step, pause, reset and speed controls are supported. Moving SVG packets visualize transfer; the active node, JSON payload, ontology concept and event trace update together.
+## Local use
 
-Accepted route: check-in -> acquisition -> quality -> observation -> snapshot -> comparison -> assessment -> advice -> disconnected dentist handoff -> feedback -> next day.
+Run `python -m scripts.export_explorer`, then serve `web/` with a static HTTP server. No external Python package is needed for the export. Named OWL class declarations are inventoried from the maintained Turtle files; this is explicitly not RDF validation, inference or SHACL checking. Use `scripts/validate_ontology.py` and the pinned requirements for formal ontology checks.
 
-Rejected route: check-in -> acquisition -> quality -> rescan request -> symptom-based assessment -> advice -> disconnected handoff -> feedback -> next day. No replacement scan or new snapshot is invented. Dentist notification remains not-sent. Anatomical reconstruction/clinical detection remain unimplemented.
+## Checks
 
-Validation: pure replay-state tests cover all 30 users and 2,224 advances; script/DOM-contract smoke checks cover rendering, animated packet markup, step/reset/play/pause. These are not real browser visual QA; that remains unavailable.
+```sh
+python -m unittest discover -s tests -p 'test_*.py'
+node tests/test_flow_replay.cjs
+node tests/test_flow_ui_contract.cjs
+node tests/test_entity_chain.cjs
+node tests/test_data_sync.cjs
+```
+
+The requirement benchmark is visible and retains its known persistent-toothache failure. Script/DOM-contract checks do not establish browser visual quality or clinical capability.

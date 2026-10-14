@@ -10,7 +10,8 @@ for(const user of new Set(data.checkins.map(c=>c.patient_id))){
   assert.equal(route[0],0);assert.equal(route.at(-1),11);
   assert.equal(route.includes(4),row.observation.available);
   assert.equal(route.includes(9),!row.observation.available);
-  assert(route.includes(6)&&route.includes(7)&&route.includes(10)&&route.includes(8));
+  assert(route.includes(6)&&route.includes(7)&&route.includes(8));
+  assert.equal(route.includes(10),row.priority==='professional-review'||flow.emergency(row));
   state=flow.next(rows,state);transfers++;if(++guard>1000)throw Error('Replay did not terminate');
  }
  assert.equal(state.day,rows.length-1);
